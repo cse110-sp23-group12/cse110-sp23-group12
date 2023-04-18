@@ -28,5 +28,5 @@ Here are the main takeaways/ideas brought up:
 To-do List for Each Group member:
 - [ ] Come up with group name/branding and send it on Slack (by Tues April 18)
 - [ ] Fill out the When2Meet form on slack for our Scribbl.io group bonding (by Tues April 18)
-- [ ] Send in personal video introducing yourself (by Wed April 19)
-- [ ] Sign contract (by Thurs April 20)
+- [ ] Sign contract (by Wed April 19)
+- [ ] Send in personal video introducing yourself (by Thurs April 20)
