@@ -1,4 +1,4 @@
-# 04/15/23 Kickoff Meeting
+# 04/17/23 Kickoff Meeting
 
 ## Hello Everyone!
 Today's meeting is focused on meeting each other, planning on our team tasks and achievements.
