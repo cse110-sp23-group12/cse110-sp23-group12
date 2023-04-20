@@ -35,7 +35,9 @@ everyone!
 [ insert your brief overview here ]
 
 ### Max Rivett
-[ insert your brief overview here ]
+What's up, I'm Max. I'm a second-year Computer Science major from Marshall. In my 
+free time, I like to play sports and hang out with friends. I'm looking forward to
+seeing what we can create this quarter!
 
 ### Niklas Chang
 [ insert your brief overview here ]
