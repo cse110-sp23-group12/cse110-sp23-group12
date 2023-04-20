@@ -39,6 +39,8 @@ What's up, I'm Max. I'm a second-year Computer Science major from Marshall. In m
 free time, I like to play sports and hang out with friends. I'm looking forward to
 seeing what we can create this quarter!
 
+[Link to my page](https://github.com/maxrivett)
+
 ### Niklas Chang
 [ insert your brief overview here ]
 
