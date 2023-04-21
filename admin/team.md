@@ -17,8 +17,9 @@ Welcome to the Fortune Cookies. We are a team created from the most `yummy` cook
 <!-- Planner -->
 ## Our Planner:
 ### Jinpeng Huang
-[ insert your brief overview here ]
+  Hi, I'm Jinpeng, a third-year in math-cs major from ERC. I like to play esports games with friends in my free time. I look forward to working on the projects with everyone for CSE110 this quarter! =D
 
+  [Link to my page](https://github.com/Hisoda0330)
 <!-- Developers -->
 ## Our Developers:
 ### Brandon Szeto
