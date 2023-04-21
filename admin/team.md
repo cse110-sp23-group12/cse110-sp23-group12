@@ -46,3 +46,8 @@ seeing what we can create this quarter!
 
 ### Wing Yin Chan
 [ insert your brief overview here ]
+
+### Yuhang Jiang
+Hi I'm Yuhang, I major in Computer Science from ERC. In my free time I like competitive 
+programming and football, I enjoy at least one round of codeforces content and three 
+soccer matches a week. I am so happy and excited to work with you this quarter!
