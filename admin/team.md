@@ -1,5 +1,5 @@
 # The Fortune Cookies
-Welcome to the Fortune Cookies. We are a team created from the most `yummy` cookies. Good things come to those who wait - but great things come to those who our Fortune Cookies.
+Welcome to the Fortune Cookies. We are a team created from the most `yummy` cookies. Good things come to those who wait - but great things come to those who eat our Fortune Cookies.
 ![Logo](branding/FortuneCookies.png)_
 
 ## Before we start, here is a roster of our lovely members:
