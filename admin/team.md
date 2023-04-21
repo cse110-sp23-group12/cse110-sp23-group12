@@ -8,7 +8,7 @@ Welcome to Team 12's Page
 ### Annie Phan
   Hello! I am currently a 2nd year CS major from Warren. In my free time, I enjoy hanging out with friends and coding :). I am very excited for our upcoming quarter!
   
-  [˚ʚ♡ɞ˚ Link to my page:](https://anniephan02.github.io/CSE110/)
+  [Link to my page](https://github.com/AnniePhan02)
 
 ### JD Russo
 [ insert your brief overview here ]
