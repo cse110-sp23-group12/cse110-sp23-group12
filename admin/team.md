@@ -1,5 +1,5 @@
-# Team 12
-Welcome to Team 12's Page
+# The Fortune Cookies
+Welcome to Fortune Cookie's Page
 
 ## Before we start, here is a roster of our lovely members:
 
