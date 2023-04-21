@@ -34,7 +34,9 @@ everyone!
 [ insert your brief overview here ]
 
 ### Ke Ma
-[ insert your brief overview here ]
+Hi, I'm Mark and I am a second-year math-cs student from ERC. I love trading stocks and options. I am looking forward to work on final project with you all!!!!!!
+
+[Link to my page](https://github.com/MarkMa2003)
 
 ### Max Rivett
 What's up, I'm Max. I'm a second-year Computer Science major from Marshall. In my 
