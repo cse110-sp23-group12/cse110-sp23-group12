@@ -42,7 +42,9 @@ seeing what we can create this quarter!
 [Link to my page](https://github.com/maxrivett)
 
 ### Niklas Chang
-[ insert your brief overview here ]
+Hi everyone I'm Niklas, and I am a second year majoring in Computer Engineering from ERC. I always love to play any racket sport. Right now I have been really enjoying tennis. I also love to play the piano for fun! I have high hope for this quarter and can't wait to see what this team can achieve!
+
+[Link to my page](https://github.com/Niklichang)
 
 ### Wing Yin Chan
 [ insert your brief overview here ]
