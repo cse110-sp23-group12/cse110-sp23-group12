@@ -1,5 +1,6 @@
 # The Fortune Cookies
-Welcome to Fortune Cookie's Page
+Welcome to the Fortune Cookies. We are a team created from the most `yummy` cookies. Good things come to those who wait - but great things come to those who our Fortune Cookies.
+![Logo](branding/FortuneCookies.png)_
 
 ## Before we start, here is a roster of our lovely members:
 
@@ -54,3 +55,5 @@ Hi I'm Yuhang, I major in Computer Science from ERC. In my free time I like comp
 programming and football, I enjoy at least one round of codeforces content and three 
 soccer matches a week. I am so happy and excited to work with you this quarter!
 [Link to my page](https://github.com/scripe2022)
+
+# Thank you for joining us today!
