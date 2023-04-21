@@ -48,7 +48,8 @@ Hi everyone I'm Niklas, and I am a second year majoring in Computer Engineering 
 [Link to my page](https://github.com/Niklichang)
 
 ### Wing Yin Chan
-[ insert your brief overview here ]
+Hi everyone! I'm wing and I'm a thrid year CS major student from ERC. In my free time, I enjoy watching TV shows and drama. I also like playing game & sports with frieds. Looking forward to working with you guys!
+[Link to my page](https://github.com/wingchan852)
 
 ### Yuhang Jiang
 Hi I'm Yuhang, I major in Computer Science from ERC. In my free time I like competitive 
