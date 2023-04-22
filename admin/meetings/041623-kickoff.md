@@ -3,6 +3,9 @@
 ## Hello Everyone!
 Today's meeting is focused on meeting each other, planning on our team tasks and achievements.
 
+## Time and Place
+- 3pm outside MOM's cafe
+
 ## Agenda
 - [x] Set up a weekly meetup time and spot
 - [ ] Come up with our brand
