@@ -12,7 +12,9 @@ Welcome to the Fortune Cookies. We are a team created from the most `yummy` cook
   [Link to my page](https://github.com/AnniePhan02)
 
 ### JD Russo
-[ insert your brief overview here ]
+  Hiya, I'm JD! I am a 3rd year computer engineering major from Revelle. In my spare time, I enjoy playing the French Horn in a few campus music ensembles, occasionally rock climbing, and hanging out with friends. I am very stoked about making our fortune-telling app this quarter, and I look forward to working with everyone!
+  
+  [Link to my page]
 
 <!-- Planner -->
 ## Our Planner:
