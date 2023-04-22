@@ -33,7 +33,9 @@ everyone!
 [Link to my page](https://github.com/brandonszeto)
 
 ### Joanna Yang
-[ insert your brief overview here ]
+Hello, I'm Joanna. I am a third-year computer science major from Warren. I like ice-skating and photography. Looking foward to work with everyone this quarter!
+
+[Link to my page](https://github.com/joy002)
 
 ### Ke Ma
 Hi, I'm Mark and I am a second-year math-cs student from ERC. I love trading stocks and options. I am looking forward to work on final project with you all!!!!!!
