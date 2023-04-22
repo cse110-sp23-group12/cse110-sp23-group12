@@ -22,6 +22,7 @@ What we've done today:
 
 ## Main Takeaways 
 - We decided the official team name will be 'Fortune Cookies'
+  - we voted to change from the originally settled upon 'Fortune Casters'
 - We designed our final team logo
 - We made significant progress making our team poster!
 - To Do: Finish whatever required on slack by friday (due dates and assignments posted)
