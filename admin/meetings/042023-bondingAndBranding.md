@@ -1,7 +1,13 @@
 # Meeting Notes
 ## Attendees:
-- everyone
-- Annie has family stuff
+-Nikolas
+-Max
+-Yuhang
+-Wing
+-Mark
+-Joanna
+-Brandon
+-JD
 
 ## Agenda
 What we've done today:
