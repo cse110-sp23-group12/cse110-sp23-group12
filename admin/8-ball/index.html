@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortune Teller</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <h1>Fortune Teller</h1>
+    <form id="user-info">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="love">Love</option>
+        <option value="career">Career</option>
+        <option value="health">Health</option>
+        <option value="general">General</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <p>Click the crystal ball to reveal your fortune:</p>
+    <div class="crystal-ball" id="crystal-ball">
+      <div class="reflection"></div>
+    </div>
+    <p id="fortune-text"></p>
+    <div class="loader" id="loader"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
