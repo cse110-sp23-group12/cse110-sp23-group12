@@ -1,195 +1,201 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to right top, #ff6a00, #ee0979);
+  color: #fff;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.crystal-ball {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 50% 50%, #ffffff, #7a7a7a);
+  border-radius: 50%;
+  margin: 20px auto;
+  cursor: pointer;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reflection {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8));
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  animation: reflection-animation 5s infinite alternate;
+}
+
+@keyframes reflection-animation {
+  0% {
+    transform: translateY(0);
   }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: linear-gradient(to right top, #ff6a00, #ee0979);
-    color: #fff;
+  100% {
+    transform: translateY(90px);
   }
-  
-  main {
-    width: 100%;
-    max-width: 600px;
+}
+
+#fortune-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#fortune-text.visible {
+  opacity: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.loader {
+  display: none;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+label {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+input:focus, select:focus {
+  border-color: #ee0979;
+  box-shadow: 0 0 5px rgba(238, 9, 121, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #ee0979;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d80768;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
   }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
   }
-  
-  p {
-    font-size: 1.2rem;
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
   }
-  
-  .crystal-ball {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle at 50% 50%, #ffffff, #7a7a7a);
-    border-radius: 50%;
-    margin: 20px auto;
-    cursor: pointer;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .reflection {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8));
-    top: 10px;
-    left: 10px;
-    border-radius: 50%;
-    animation: reflection-animation 5s infinite alternate;
-  }
-  
-  @keyframes reflection-animation {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(90px);
-    }
-  }
-  
-  #fortune-text {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 20px;
+}
+
+@keyframes fade-in-up {
+  0% {
     opacity: 0;
-    transition: opacity 1s;
+    transform: translateY(20px);
   }
-  
-  #fortune-text.visible {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  input, select, button {
-    padding: 5px;
-    font-size: 1rem;
-  }
-  
-  button {
-    cursor: pointer;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .loader {
-    display: none;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin 2s linear infinite;
-    margin: 10px auto;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
 
-  label {
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
 
-  input, select {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  
-  input:focus, select:focus {
-    border-color: #ee0979;
-    box-shadow: 0 0 5px rgba(238, 9, 121, 0.5);
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #ee0979;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-  }
-  
-  button:hover {
-    background-color: #d80768;
-  }
-  
-  button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-  }
+.fade-in-up {
+  animation: fade-in-up 0.5s ease-in both;
+}
 
-  @keyframes shake {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    10%, 30%, 50%, 70%, 90% {
-      transform: translateX(-10px);
-    }
-    20%, 40%, 60%, 80% {
-      transform: translateX(10px);
-    }
-  }
-  
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .shake {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  }
-  
-  .fade-in-up {
-    animation: fade-in-up 0.5s ease-in both;
-  }
+input::placeholder, select {
+  color: #333;
+}
 
-  input::placeholder, select {
-    color: #333;
-  }
+#go-back {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 800;
+}
