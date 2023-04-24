@@ -25,7 +25,7 @@
     5. Started work on slides for what we learned from using chatGPT
 ### For Next Time
     1. Finalize Website, testing, documentation
-     - Fix any bugs, add comments (using GPT to describe functionality?)
+    - Fix any bugs, add comments (using GPT to describe functionality?)
      - Make sure we like the look and feel of the UI
      - Make tests for our features and functionality
      - sound effects?
