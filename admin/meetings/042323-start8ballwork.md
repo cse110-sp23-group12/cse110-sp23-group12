@@ -25,13 +25,13 @@
     5. Started work on slides for what we learned from using chatGPT
 ### For Next Time
     1. Finalize Website, testing, documentation
-     * Fix any bugs, add comments (using GPT to describe functionality?)
-     * Make sure we like the look and feel of the UI
-     * Make tests for our features and functionality
-     * sound effects?
-     * Combine branches w/o conflicts
+     - Fix any bugs, add comments (using GPT to describe functionality?)
+     - Make sure we like the look and feel of the UI
+     - Make tests for our features and functionality
+     - sound effects?
+     - Combine branches w/o conflicts
     3. Finalize Slides
-     * Everyone should take a look, add anything you have learned from using AI where you feel necessary
+     - Everyone should take a look, add anything you have learned from using AI where you feel necessary
     5. Make video!
     6. All done :)
 
