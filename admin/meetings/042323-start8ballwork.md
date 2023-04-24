@@ -23,6 +23,7 @@
     3. We adapted and changed the code using ChatGPT to change the look of it and add features like music, back button, etc. 
     4. Started making testing and documentation
     5. Started work on slides for what we learned from using chatGPT
+    6. We also have a second repo in our organization called 8ball that uses different functionality in generating responses
 ### For Next Time
     1. Finalize Website, testing, documentation
         - Fix any bugs, add comments (using GPT to describe functionality?)
