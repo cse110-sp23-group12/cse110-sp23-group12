@@ -21,9 +21,15 @@ jobs:
           node-version: '12'
           
       # Installs dependencies
+      - name: Install Dependencies
       - run: npm install
       # Runs the ESLint tool on all JS files in root directory
+      - name: Run ESLint tool
       - run: npx eslint .
+      
+      # Documentaion
+      - name: Generate documentation
+      - run: npm run docs
       
       # Execute unit tests
       - name: Unit Test
