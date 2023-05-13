@@ -1,5 +1,5 @@
 # JavaScript Syntax Check
-name: js-syntax.yml
+name: workflow.yml
 
 # Workflow triggered main pushed/pulled
 on: 
