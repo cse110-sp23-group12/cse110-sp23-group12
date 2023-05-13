@@ -24,4 +24,7 @@ jobs:
       - run: npm install
       # Runs the ESLint tool on all JS files in root directory
       - run: npx eslint .
-
+      
+      # Execute unit tests
+      - name: Unit Test
+        run: ./gradlew testDebugUnitTest
