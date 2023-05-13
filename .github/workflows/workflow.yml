@@ -21,10 +21,10 @@ jobs:
           node-version: '12'
           
       # Installs dependencies
-      - run: npm install
+      - run: npm ci
       # Runs the ESLint tool on all JS files in root directory
       - run: npx eslint .
       
       # Execute unit tests
       - name: Unit Test
-        run: ./gradlew testDebugUnitTest
+        run: npm test
