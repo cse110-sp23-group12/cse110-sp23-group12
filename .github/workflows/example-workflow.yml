@@ -1,2 +1,22 @@
-# Example workflow
-name: example-workflow.yml
+# JavaScript Syntax Check
+name: js-syntax.yml
+
+# Workflow triggered main pushed/pulled
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+        # Workflow steps
+        steps:
+          # Checks out the repo code 
+          - uses: actions/checkout@v2
+          # Installs dependencies
+          - run: npm install
+          # Runs the ESLint tool on all JS files in root directory
+          - run: npx eslint .
+
