@@ -15,6 +15,11 @@ jobs:
     steps:
       # Checks out the repo code 
       - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          
       # Installs dependencies
       - run: npm install
       # Runs the ESLint tool on all JS files in root directory
