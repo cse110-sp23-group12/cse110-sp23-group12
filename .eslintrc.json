@@ -11,5 +11,16 @@
         "sourceType": "module"
     },
     "rules": {
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",    // anonymous functions must have space before function parentheses: const func = () => {}
+            "named": "never",         // named functions must NOT have space before function parentheses: function func() {}
+            "asyncArrow": "always"
+        }],
+        "indent": ["error", 4],       // indent 4
+        "linebreak-style": ["error", "unix"], //
+        "quotes": ["error", "single"],        //
+        "semi": ["error", "always"],
+        "no-unused-vars": "warn",
+        "no-console": "off"
     }
 }
