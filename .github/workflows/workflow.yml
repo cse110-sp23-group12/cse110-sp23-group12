@@ -26,7 +26,7 @@ jobs:
       # Runs the ESLint tool on all JS files in root directory
 #       - name: Run ESLint tool
 #         run: npx eslint .
-      
+
       # Documentaion
       - name: Generate documentation
         run: npm run docs
@@ -35,7 +35,7 @@ jobs:
       - name: Unit Test
         # run: npm test ./__tests__/sum.test.js
         run: npm test ./__tests__/*
-        
+      
       # Run linter
       - name: Run linter
         run: npm run linter
