@@ -4,6 +4,7 @@ name: JS lint
 # triggered main pushed/pulled
 on: 
   push:
+    branches-ignore: [main]
   pull_request:
     branches: [main]
 

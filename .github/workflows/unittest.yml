@@ -4,6 +4,7 @@ name: Unit test
 # triggered main pushed/pulled
 on: 
   push:
+    branches-ignore: [main]
   pull_request:
     branches: [main]
 
