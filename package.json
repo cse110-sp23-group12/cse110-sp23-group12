@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-env": "^7.21.5",
     "babel-jest": "^27.3.1",
     "eslint": "^8.40.0",
     "eslint-config-standard": "^17.0.0",
@@ -15,8 +15,8 @@
   },
   "scripts": {
     "test": "jest --passWithNoTests ./__tests__/*",
-    "docs": "jsdoc -c jsdoc.json",
-    "lint": "npx eslint ./source/"
+    "doc": "./node_modules/jsdoc/jsdoc.js -c ./.jsdoc.conf.json",
+    "lint": "npx eslint ./source/ --ext .js"
   },
   "jest": {
     "preset": "jest-puppeteer",
