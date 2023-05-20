@@ -9,7 +9,7 @@ on:
     branches: [main]
 
 jobs:
-  Run ESLint tool:
+  ESLint-tool:
     runs-on: ubuntu-latest
         # Workflow steps
     steps:
