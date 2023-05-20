@@ -14,8 +14,9 @@
     "puppeteer": "^11.0.0"
   },
   "scripts": {
-    "test": "jest --passWithNoTests",
-    "docs": "jsdoc -c jsdoc.json"
+    "test": "jest --passWithNoTests ./__tests__/*",
+    "docs": "jsdoc -c jsdoc.json",
+    "lint": "npx eslint ./source/"
   },
   "jest": {
     "preset": "jest-puppeteer",

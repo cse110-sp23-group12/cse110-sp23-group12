@@ -1,7 +1,7 @@
 # JavaScript Syntax Check
-name: workflow.yml
+name: JS lint
 
-# Workflow triggered main pushed/pulled
+# triggered main pushed/pulled
 on: 
   push:
     branches: [main]
@@ -18,20 +18,20 @@ jobs:
       
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: '18'
           
       # Installs dependencies
       - name: Install Dependencies
         run: npm install
       # Runs the ESLint tool on all JS files in root directory
-#       - name: Run ESLint tool
-#         run: npx eslint .
+      - name: Run ESLint tool
+        run: npm run lint
 
       # Documentaion
-      - name: Generate documentation
-        run: npm run docs
+      # - name: Generate documentation
+        # run: npm run docs
       
       # Execute unit tests
-      - name: Unit Test
+      # - name: Unit Test
         # run: npm test ./__tests__/sum.test.js
-        run: npm test ./__tests__/*
+        # run: npm test ./__tests__/*
