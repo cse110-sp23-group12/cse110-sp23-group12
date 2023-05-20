@@ -35,3 +35,7 @@ jobs:
       - name: Unit Test
         # run: npm test ./__tests__/sum.test.js
         run: npm test ./__tests__/*
+        
+      # Run linter
+      - name: Run linter
+        run: npm run linter
