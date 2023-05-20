@@ -38,4 +38,4 @@ jobs:
       
       # Run linter
       - name: Run linter
-        run: npm run linter
+        run: npm run lint
