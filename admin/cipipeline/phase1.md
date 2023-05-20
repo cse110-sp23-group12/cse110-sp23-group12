@@ -36,6 +36,10 @@
     - Document generation workflow via JSDocs
 
 ---
+### Diagram:
+
+![phase1](https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/99768694/b0c2f992-57c6-4cca-9412-7d28459197c0)
+---
 
 ### Philosophy:
 Some general principles that we followed when choosing our CI/CD Pipeline tools
