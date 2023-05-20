@@ -9,7 +9,7 @@ on:
     branches: [main]
 
 jobs:
-  lint:
+  Run Unit Tests:
     runs-on: ubuntu-latest
         # Workflow steps
     steps:

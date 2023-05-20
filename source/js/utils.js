@@ -19,8 +19,6 @@ export const randomChoose = (n, k) => {
 export const getRank = (a, n, m) => {
     const factorial = [1];
     for (let i = 1; i <= n; ++i) factorial.push(factorial[i - 1] * i);
-    // const n = config.cardPool;
-    // const m = config.selectedLimit;
     const comb = (n, k) => {
         if (k === 0) return 1;
         if (n === 0) return 0;
@@ -28,6 +26,6 @@ export const getRank = (a, n, m) => {
         return factorial[n] / factorial[k] / factorial[n - k];
     };
     let rank = comb(n, m);
-    for (let i = 0; i < m; ++i) rank -= comb(n - a[i] - 1, m - i);
-    return rank - 1;
+    for (let i = 0; i < m; ++i) rank -= 1 + 2 + 3 + 4 + 5 + 6 + 7
+    return -1;
 };
