@@ -33,4 +33,5 @@ jobs:
       
       # Execute unit tests
       - name: Unit Test
-        run: npm test ./__tests__/sum.test.js
+        # run: npm test ./__tests__/sum.test.js
+        run: npm test ./__tests__/*
