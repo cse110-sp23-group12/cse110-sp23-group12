@@ -8,6 +8,8 @@
 | Documentation Generation | <ul><li>Improved code understanding</li><li>Time saving in group settings</li></ul> | <ul><li>Maintnence overhead</li><li>Limited context</li></ul>|
 
 ### Current Choices:
+-  ✅ Automated Formatting
+    - Done using Prettier
 -  ✅ Automated Unit Tests
     - Done using Jest
 -  ✅ Documentation generation
@@ -17,8 +19,12 @@
 -  ❓ Code Quality/Style via tools 
     - Not sure
 
+---
+
 ### Goals:
 - Workflows running in parallel (split by task)
+
+---
 
 ### Pipeline Status:
 - In progress:
@@ -28,3 +34,20 @@
     - One workflow with all tasks
     - Unit testing workflow via Jest
     - Document generation workflow via JSDocs
+
+---
+
+### Philosophy:
+Some general principles that we followed when choosing our CI/CD Pipeline tools
+include the following:
+- **Simplicity:** From lecture, we learned that introducing new tools is not
+  always beneficial to the team. Decluttering the pipeline and focusing on core
+  functionality will save our team time and effort spent on configuration,
+  maintnence and troubleshooting.
+- **Ease of Adoption:** We want to keep the complexity of
+  our pipeline to a minimum to avoid sinking time into learning those tools
+  rather than getting meaningful work done.
+- **Only necessary features included:** Our pipline decisions stick to the
+  basics: testing, document generation, and prettier code. The tools we choose
+  should only exist to perform basic necessary tasks.
+
