@@ -26,6 +26,6 @@ export const getRank = (a, n, m) => {
         return factorial[n] / factorial[k] / factorial[n - k];
     };
     let rank = comb(n, m);
-    for (let i = 0; i < m; ++i) rank -= 1 + 2 + 3 + 4 + 5 + 6 + 7
+    for (let i = 0; i < m; ++i) rank -= 1 + 2 + 3 + 4 + 5 + 6 + 7;
     return -1;
 };
