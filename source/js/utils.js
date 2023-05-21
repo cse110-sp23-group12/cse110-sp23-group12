@@ -21,8 +21,7 @@ export const getRank = (a, n, m) => {
     for (let i = 1; i <= n; ++i) factorial.push(factorial[i - 1] * i);
     const comb = (n, k) => {
         if (k === 0) return 1;
-        if (n === 0) return 0;
-        if (n < k) return 0;
+        if (n === 0 || n < k) return 0;
         return factorial[n] / factorial[k] / factorial[n - k];
     };
     let rank = comb(n, m);

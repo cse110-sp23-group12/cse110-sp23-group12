@@ -1,5 +1,5 @@
-# docs
-name: JS Doc
+# JavaScript Syntax Check
+name: Deployment
 
 # triggered main pushed/pulled
 on: 
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  documentation:
+  Deployment:
     runs-on: ubuntu-latest
         # Workflow steps
     steps:
@@ -22,8 +22,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
       # Runs the ESLint tool on all JS files in root directory
-      - name: Generate documentation
-        run: npm run doc
+      # - name: Run ESLint tool
+      #   run: npm run lint
 
       # Documentaion
       # - name: Generate documentation
