@@ -16,10 +16,8 @@ export const randomChoose = (n, k) => {
     return result;
 };
 
-export const getRank =(a, n, m) => {
-    let factorial = [1];
-    let unused = 1;
-    let nosemicolon = 2
+export const getRank = (a, n, m) => {
+    const factorial = [1];
     for (let i = 1; i <= n; ++i) factorial.push(factorial[i - 1] * i);
     const comb = (n, k) => {
         if (k === 0) return 1;
@@ -28,5 +26,5 @@ export const getRank =(a, n, m) => {
     };
     let rank = comb(n, m);
     for (let i = 0; i < m; ++i) rank -= comb(n - a[i] - 1, m - i);
-    return rank;
+    return rank - 1;
 };
