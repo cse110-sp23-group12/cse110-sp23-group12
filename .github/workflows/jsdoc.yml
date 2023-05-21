@@ -24,7 +24,15 @@ jobs:
       # Runs the ESLint tool on all JS files in root directory
       - name: Generate documentation
         run: npm run doc
-
+      - name: Configure Git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Commit and Push changes
+        run: |
+          git add .
+          git commit -m "auto generated docs"
+          git push origin
       # Documentaion
       # - name: Generate documentation
         # run: npm run docs
