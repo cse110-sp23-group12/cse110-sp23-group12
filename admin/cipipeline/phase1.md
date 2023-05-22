@@ -8,15 +8,15 @@
 | Documentation Generation | <ul><li>Improved code understanding</li><li>Time saving in group settings</li></ul> | <ul><li>Maintnence overhead</li><li>Limited context</li></ul>|
 
 ### Current Choices:
--  ✅ Automated Formatting
-    - Done using Prettier
+-  ✅ Code checks
+    - Done using ESLint
 -  ✅ Automated Unit Tests
     - Done using Jest
 -  ✅ Documentation generation
     - Done using JSDocs
 -  ✅ Code quality via human review
     - Done during meetings
--  ❓ Code Quality/Style via tools 
+-  ❓ Code Quality/Style via Prettier
     - Not sure
 
 ---
@@ -28,11 +28,11 @@
 
 ### Pipeline Status:
 - In progress:
-    - Trying to add code quality checks via ESLint, is proving to be
-      unnecessarily difficult
+    - Trying to add more checks via Prettier
 - What we have:
-    - One workflow with all tasks
-    - Unit testing workflow via Jest
+    - Three workflows
+    - Unit tests with Jest
+    - ESLint checks
     - Document generation workflow via JSDocs
 
 ---
