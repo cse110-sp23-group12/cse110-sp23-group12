@@ -38,7 +38,7 @@
 ---
 ### Diagram:
 
-![phase1](https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/99768694/b0c2f992-57c6-4cca-9412-7d28459197c0)
+![phase1](https://raw.githubusercontent.com/cse110-sp23-group12/cse110-sp23-group12/main/admin/cipipeline/phase1.png?token=GHSAT0AAAAAAB6WFL4VR23NU36I4DFV77FUZDKXWWQ)
 ---
 
 ### Philosophy:
