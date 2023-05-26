@@ -1,0 +1,54 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .left {
+        background-color: blue;
+        width: 12.5%;
+    }
+    .mid {
+        background-color: red;
+        width: 75%;
+        max-width: 1296px;
+    }
+    .right {
+        background-color: green;
+        width: 12.5%;
+    }
+    .left, .mid, .right {
+        height: 2000px;
+    }
+    .document {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @media (min-width: 768px) {
+        .content {
+            width: 100%;
+            max-width: 1296px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    @media (max-width: 767px) {
+        .content {
+            flex-direction: column;
+        }
+        .left, .right {
+            display: none;
+        }
+    }
+
+</style>
+<html>
+    <div class="document">
+        <div class="content">
+            <div class="left"></div>
+            <div class="mid"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</html>
