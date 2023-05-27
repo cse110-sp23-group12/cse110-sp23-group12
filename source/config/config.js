@@ -7,6 +7,36 @@ const config = {
     selectedLimit: 3,
     cards: [
         {
+            prompt: 'emperor',
+            filename: 'emperor.png',
+            description: ''
+        },
+        {
+            prompt: 'empress',
+            filename: 'empress.png',
+            description: ''
+        },
+        {
+            prompt: 'fool',
+            filename: 'fool.png',
+            description: ''
+        },
+        {
+            prompt: 'hierophant',
+            filename: 'hierophant.png',
+            description: ''
+        },
+        {
+            prompt: 'high priestess',
+            filename: 'high priestess.png',
+            description: ''
+        },
+        {
+            prompt: 'magician',
+            filename: 'magician.png',
+            description: ''
+        },
+        {
             prompt: 'foolishness',
             filename: 'foolishness.png'
         },
