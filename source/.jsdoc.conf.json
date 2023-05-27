@@ -6,7 +6,7 @@
     "destination": "./"
   },
   "source": {
-    "include": ["source"],
+    //"include": ["source"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "node_modules"
   },
