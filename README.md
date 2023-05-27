@@ -4,7 +4,9 @@
 
 [Team Video Link](https://youtu.be/IJE8jT5Mpc4)
 
-![Logo](admin/branding/FortuneCookies.png)
+<img src = "admin/branding/FortuneCookies.png">
+
+[![Watch the video](https://img.youtube.com/vi/IJE8jT5Mpc4/maxresdefault.jpg)](https://youtu.be/IJE8jT5Mpc4)
 
 ---
 ## Our Mystical 8-Ball
@@ -15,6 +17,3 @@
 ---
 ## Additional Resources
 [Shared Google Drive](https://drive.google.com/drive/folders/1nxw7a9CjtG_JkpEb2ymH_D2WZbrctLuR?usp=share_link)
-
-
-
