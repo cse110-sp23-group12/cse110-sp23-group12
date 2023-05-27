@@ -3,10 +3,10 @@
   "recurseDepth": 10,
   "opts": {
     "recurse": true,
-    "destination": "./"
+    "destination": "./doc"
   },
   "source": {
-    //"include": ["source"],
+    "include": ["./"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "node_modules"
   },
