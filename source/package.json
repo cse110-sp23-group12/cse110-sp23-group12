@@ -11,12 +11,15 @@
     "jest": "^27.3.1",
     "jest-puppeteer": "^6.0.0",
     "jsdoc": "^4.0.2",
-    "puppeteer": "^11.0.0"
+    "puppeteer": "^11.0.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard": "^33.0.0"
   },
   "scripts": {
     "test": "jest --passWithNoTests ./__tests__/*",
     "doc": "./node_modules/jsdoc/jsdoc.js -c ./.jsdoc.conf.json",
-    "lint": "npx eslint ./ --ext .js"
+    "eslint": "npx eslint ./ --ext .js",
+    "csslint": "npx stylelint css/style.css"
   },
   "jest": {
     "preset": "jest-puppeteer",
