@@ -1,4 +1,4 @@
-import { randomChoose } from '../source/js/utils.js';
+import { randomChoose } from '../js/utils.js';
 
 test('random choose 6 from 9', () => {
     const ids = randomChoose(9, 6);

@@ -1,4 +1,4 @@
-import { getRank } from '../source/js/utils.js';
+import { getRank } from '../js/utils.js';
 
 test('C(9, 3), [2, 5, 8] = 60', () => {
     expect(getRank([2, 5, 8], 9, 3)).toBe(60);
