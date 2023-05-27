@@ -35,7 +35,7 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Commit and Push changes
         run: |
-          git add doc
+          git add source/doc
           git commit -m "auto generated docs"
           git push origin
       # Documentaion
