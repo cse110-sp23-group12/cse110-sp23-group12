@@ -22,7 +22,9 @@ jobs:
           
       # Installs dependencies
       - name: Install Dependencies
-        run: npm install
+        run: |
+            cd source
+            npm install
       # Runs the ESLint tool on all JS files in root directory
       - name: Run ESLint tool
         run: npm run lint
