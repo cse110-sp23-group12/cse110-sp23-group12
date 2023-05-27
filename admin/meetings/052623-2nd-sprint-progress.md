@@ -1,5 +1,6 @@
 # Meeting Notes
 ## Attendees
+(Everyone attended)
 - Annie
 - JD
 - Joanna
@@ -9,6 +10,7 @@
 - Mark
 - Wing
 - Jinpeng
+- Max (over zoom)
 
 ## Time and Place
 5-6:45pm in Franklin Antonio Hall
