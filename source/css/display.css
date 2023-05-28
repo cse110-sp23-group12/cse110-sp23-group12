@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #c19267;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.display-document {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1296px;
+    height: 100vh;
+    margin: auto;
+}
+
+.display-bakeware {
+    width: 100%;
+    margin: auto;
+    aspect-ratio: 677/348;
+    overflow: hidden;
+    border: 1vw solid #dda653;
+    background-color: #fcdea5;
+    border-radius: 5vw;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+}
+
+.display-cookie {
+    margin: auto;
+    width: calc(100% / 3);
+    height: calc(100% / 2);
+    display: flex;
+    justify-content: center;
+}
+
+.display-cookie>img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    align-items: center;
+}
+
+.display-cookie>img:hover {
+    cursor: pointer;
+}
+
+.position-relative {
+    position: relative;
+}
+
+#selected-cookie0, #selected-cookie1, #selected-cookie2 {
+    position: absolute;
+    height: 120%;
+    width: auto;
+    top: calc(-20%);
+    transform: translate(-50%, 0);
+}
+
+#selected-cookie0 {
+    left: calc(30%);
+}
+
+#selected-cookie1 {
+    left: calc(50%);
+}
+
+#selected-cookie2 {
+    left: calc(70%);
+}
+
+.display-none {
+    display: none;
+}

@@ -8,9 +8,9 @@ import { getRank } from './utils.js';
 export const getRequest = (data) => {
     return new Promise((resolve, reject) => {
         fetch('https://team12.jyh.sb/tarot?' + new URLSearchParams({
-            first: config.cards[data[0]].prompt,
-            second: config.cards[data[1]].prompt,
-            third: config.cards[data[2]].prompt
+            first: config.cards[data[0]].name,
+            second: config.cards[data[1]].name,
+            third: config.cards[data[2]].name
         }), { mode: 'cors' }
         ).then(response => response.json())
             .then(data => resolve(data))

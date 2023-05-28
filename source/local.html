@@ -2,28 +2,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="config/config.js"></script>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Ubuntu&display=swap" rel="stylesheet">
     <script type="text/javascript" src="config/version.js"></script>
-    <script type="module" src="js/request.js"></script>
-    <script type="module" src="js/utils.js"></script>
-    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </head>
 <body>
-    <div class="documentation">
-        <div class="content">
-            <div class="rows rounded">
-                We need to think more about what we need to do in our program specifically
-                Other teams have come up with ideas like using jelly beans, harry potter theme, panda express theme, game-style fortune
-                AI concerns with images + text
-                We need to first create a local MVP of our app - maybe a database of images and text that could correspond to it (use of tags)
+    <div class="landing-document">
+        <div style="flex-basis: 30%">
+            <div class="landing-title">
+                <p>Fortune</p>
+                <p>Cookies</p>
             </div>
-            <div class="rows" id="card-container">
+        </div>
+        <div style="flex-basis: 35%">
+            <img src="img/landing.svg" draggable="false" class="landing-image" />
+        </div>
+        <div style="flex-basis: 25%">
+            <div class="landing-text-editor">
+                <img src="img/logo.png" draggable="false" />
+                <input type="text" class="text-input" id="text-input">
             </div>
-            <div class="rows">
-                <div class="button" id="submit-button">submit</div>
+        </div>
+        <div style="flex-basis: 10%">
+            <div class="landing-submit-button" id="landing-submit-button">
+                <p>Go!</p>
             </div>
         </div>
     </div>
 </body>
-</html>

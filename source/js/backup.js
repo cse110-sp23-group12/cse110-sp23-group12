@@ -14,7 +14,7 @@ const insertCards = () => {
         divDom.setAttribute('class', 'col3 card');
         divDom.setAttribute('id', 'card' + ids[i].toString());
         // divDom.setAttribute('onclick', 'select(' + ids[i].toString() + ', this)');
-        divDom.setAttribute('style', 'background-image: url("img/card/' + config.cards[ids[i]].filename + '")');
+        divDom.setAttribute('style', 'background-image: url("img/' + config.cards[ids[i]].filename + '")');
         const pResponseDom = document.createElement('p');
         pResponseDom.setAttribute('id', 'card' + ids[i].toString() + '-response');
         divDom.appendChild(pResponseDom);
@@ -62,7 +62,7 @@ const submit = () => {
     if (reset) {
         for (const i in cardList) {
             if (!selectedCards[i]) continue;
-            cardList[i].style['background-image'] = 'url("img/card/' + config.cards[i].filename + '")';
+            cardList[i].style['background-image'] = 'url("img/' + config.cards[i].filename + '")';
             cardList[i].children[0].innerHTML = '';
             cardList[i].classList.remove('selected');
             selectedCards[i] = 0;
@@ -88,7 +88,7 @@ const submit = () => {
     Promise.all(promiseList).then(res => {
         for (const index in selectedID) {
             const i = parseInt(selectedID[index]);
-            cardList[i].style['background-image'] = 'url("img/card/' + config.cards[i].filename + '")';
+            cardList[i].style['background-image'] = 'url("img/' + config.cards[i].filename + '")';
             cardList[i].children[0].innerHTML = res[0].answer;
         }
         document.getElementById('submit-button').innerHTML = 'reset';
