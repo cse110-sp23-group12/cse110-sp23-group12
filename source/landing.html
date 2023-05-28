@@ -1,0 +1,146 @@
+<style>
+    body {
+        background-color: #c19267;
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        margin: 0;
+    }
+    .landing-document {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        max-width: 1296px;
+        height: 60vh;
+        margin: auto;
+        margin-top: 20vh;
+        margin-bottom: 20vh;
+    }
+    .landing-document>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .landing-title {
+        display: flex;
+        flex-direction: row;
+    }
+    .landing-title>p {
+        font-family: 'Jolly Lodger', cursive;
+        font-size: 1000%;
+        -webkit-text-stroke: 1px black;
+        text-shadow: 0.01em 0.05em 0.01em #000000;
+    }
+    .landing-title>p:first-child {
+        color: #ffffff;
+    }
+    .landing-title>p:last-child {
+        color: #df934d;
+    }
+    .landing-text-editor {
+        width: 60%;
+        height: 3vw;
+        border: 1px solid black;
+        border-radius: 99999px;
+        background-color: white;
+        display: flex;
+        justify-content: left;
+        margin-bottom: 10px;
+    }
+    .landing-image {
+        width: 15vw;
+        height: 15vw;
+    }
+    .landing-text-editor>img {
+        padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    }
+    .landing-text-editor>input {
+        font-size: 1.5vw;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+    .landing-submit-button {
+        width: 6vw;
+        height: 3vw;
+        border: 1px solid black;
+        background-color: #fcdea5;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0.5vw 1vw black;
+    }
+    .landing-submit-button>p {
+        font-family: 'Jolly Lodger', cursive;
+        color: #875426;
+        font-size: 2vw;
+        margin: auto;
+    }
+    .absolute-border {
+        position: absolute;
+        width: 100%;
+        bottom: 40%;
+        height: 500%;
+        /* border-radius: 300px; */
+        background-color: #553939;
+        z-index: -1;
+    }
+    @media (max-width: 767px) {
+        .landing-image {
+            width: 30vw;
+            height: 30vw;
+        }
+        .landing-document {
+            height: 40vh;
+            margin-top: 10vh;
+            margin-bottom: 50vh;
+        }
+        .landing-title p {
+            font-size: 16vw;
+        }
+        .landing-text-editor {
+            width: 90%;
+            height: 5vh;
+        }
+        .landing-text-editor>input {
+            font-size: 2.5vh;
+        }
+        .landing-submit-button {
+            width: 8vh;
+            height: 4vh;
+        }
+        .landing-submit-button>p {
+            font-size: 3vh;
+        }
+    }
+</style>
+<html>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- <div class="absolute-border"></div> -->
+    <div class="landing-document">
+        <div style="flex-basis: 30%">
+            <div class="landing-title">
+                <p>Fortune</p>
+                <p>Cookies</p>
+            </div>
+        </div>
+        <div style="flex-basis: 35%">
+            <img src="img/landing.svg" draggable="false" class="landing-image" />
+        </div>
+        <div style="flex-basis: 25%">
+            <div class="landing-text-editor">
+                <img src="img/logo.png" draggable="false" />
+                <input type="text" class="text-input">
+            </div>
+        </div>
+        <div style="flex-basis: 10%">
+            <div class="landing-submit-button">
+                <p>Go!</p>
+            </div>
+        </div>
+    </div>
+</html>
