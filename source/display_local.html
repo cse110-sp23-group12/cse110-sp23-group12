@@ -1,163 +1,9 @@
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #c19267;
-    }
-    p {
-        margin: 0;
-        padding: 0;
-    }
-    .display-document {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 1296px;
-        height: 100vh;
-        margin: auto;
-    }
-    
-    .display-bakeware {
-        width: 100%;
-        margin: auto;
-        aspect-ratio: 677/348;
-        overflow: hidden;
-        border: 1vw solid #dda653;
-        background-color: #fcdea5;
-        border-radius: 5vw;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-    }
-    .display-cookie {
-        margin: auto;
-        width: calc(100% / 3);
-        height: calc(100% / 2);
-        display: flex;
-        justify-content: center;
-    }
-    .display-cookie>img:hover {
-        cursor: pointer;
-    }
-    .display-cookie>img {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-        align-items: center;
-    }
-    .position-relative {
-        position: relative;
-    }
-    #selected-cookie0, #selected-cookie1, #selected-cookie2 {
-        position: absolute;
-        height: 120%;
-        width: auto;
-        top: calc(-20%);
-        transform: translate(-50%, 0);
-    }
-    #selected-cookie0 {
-        left: calc(30%);
-    }
-    #selected-cookie1 {
-        left: calc(50%);
-    }
-    #selected-cookie2 {
-        left: calc(70%);
-    }
-    .display-none {
-        display: none;
-    }
-
-    .result-document {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 1696px;
-        height: 100vh;
-        margin: auto;
-    }
-    .result-cards {
-        box-sizing: border-box;
-        height: 60%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-    }
-    .result-description {
-        box-sizing: border-box;
-        width: 27%;
-        height: 90%;
-        border: 1vw solid #dda653;
-        background-color: #fcdea5;
-        border-radius: 5vw;
-        margin: auto;
-        display: flex;
-        /* justify-content: space-around; */
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .result-response {
-        box-sizing: border-box;
-        width: 94%;
-        height: 34%;
-        border: 1vw solid #dda653;
-        background-color: #fcdea5;
-        border-radius: 5vw;
-        margin: auto;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        position: relative;
-        /* background-color: blue; */
-    }
-    p {
-        box-sizing: border-box;
-        font-family: 'Jolly Lodger', cursive;
-        word-break: break-all;
-        font-size: 1.5vw;
-    }
-    .result-response-title {
-        font-size: 4vw;
-    }
-    .result-response-text {
-        font-size: 1.5vw;
-        padding-left: 5vw;
-    }
-    .card-title {
-        /* padding: 1vw;
-        height: 33%; */
-        padding: 0 1vw;
-        /* background-color: red; */
-        align-items: center;
-        margin-bottom: 5%;
-    }
-    .card-description {
-        padding: 0 1.5vw;
-        /* padding: 1vw;
-        height: 67%; */
-        /* background-color: blue; */
-        margin-top: 5%;
-    }
-    @media (min-width: 768px) and (max-width: 1715px) {
-        .result-document {
-            box-sizing: border-box;
-            padding: 0 20px;
-            /* margin: 0 100px; */
-        }
-    }
-    .logo-img {
-        position: absolute;
-        top: 100%;
-        transform: translate(-50%, -100%);
-        height: 40%;
-    }
-</style>
-<html>
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/display.css">
+    <link rel="stylesheet" href="css/response.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Ubuntu&display=swap" rel="stylesheet">
@@ -166,8 +12,9 @@
     <script type="module" src="js/request.js"></script>
     <script type="module" src="js/utils.js"></script>
     <script type="module" src="js/display.js"></script>
+</head>
+<body>
     <div class="display-document" id="display-document">
-    <!-- <div class="display-none" id="display-document"> -->
         <div class="display-bakeware" id="display-bakeware">
         </div>
         <div class="position-relative">
@@ -177,7 +24,6 @@
             <img src="img/plate.svg" alt="plate" width="100%" draggable="false" />
         </div>
     </div>
-    <!-- <div class="result-document" id="result-document"> -->
     <div class="display-none" id="result-document">
         <div class="result-cards" id="result-cards">
         </div>
@@ -187,4 +33,4 @@
             <p class="result-response-text" id="result-response-text"></p>
         </div>
     </div>
-</html>
+</body>

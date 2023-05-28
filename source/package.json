@@ -19,7 +19,7 @@
     "test": "jest --passWithNoTests ./__tests__/*",
     "doc": "./node_modules/jsdoc/jsdoc.js -c ./.jsdoc.conf.json",
     "eslint": "npx eslint ./ --ext .js",
-    "csslint": "npx stylelint css/style.css"
+    "csslint": "npx stylelint css/*.css"
   },
   "jest": {
     "preset": "jest-puppeteer",
