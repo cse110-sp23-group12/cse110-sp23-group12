@@ -2,13 +2,13 @@ import { randomChoose } from './utils.js';
 import { getAnswer } from './request.js';
 
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
-for (let i = 0; i < selectedCards.length; ++i) {
-    console.log(config.cards[selectedCards[i]].prompt);
-}
-const sortedSelectedCards = selectedCards.sort();
+// for (let i = 0; i < selectedCards.length; ++i) {
+//     console.log(config.cards[selectedCards[i]].name);
+// }
+// console.log(selectedCards);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
-const promiseList = [getAnswer(sortedSelectedCards)];
+const promiseList = [getAnswer(selectedCards)];
 
 const insertCookies = () => {
     const cookieContainer = document.getElementById('display-bakeware');
@@ -37,7 +37,7 @@ const insertResults = () => {
         const pDesDom = document.createElement('p');
         pTitleDom.setAttribute('class', 'card-title');
         pDesDom.setAttribute('class', 'card-description');
-        pTitleDom.innerText = config.cards[selectedCards[i]].prompt;
+        pTitleDom.innerText = config.cards[selectedCards[i]].name;
         pDesDom.innerText = config.cards[selectedCards[i]].description;
         divDom.appendChild(pTitleDom);
         divDom.appendChild(pDesDom);
@@ -58,11 +58,12 @@ window.onload = () => {
 };
 
 const select = (id) => {
+    const c = selectedCards[totalSelected];
     if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
     cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
     const imgDom = document.getElementById(`selected-cookie${totalSelected}`);
     imgDom.classList.remove('display-none');
-    imgDom.setAttribute('src', `img/${config.cards[id].filename}`);
+    imgDom.setAttribute('src', `img/${config.cards[c].filename}`);
     if (++totalSelected === config.selectedLimit) show();
 };
 

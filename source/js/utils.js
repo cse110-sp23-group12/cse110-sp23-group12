@@ -16,7 +16,11 @@ export const randomChoose = (n, k) => {
     return result;
 };
 
-export const getRank = (a, n, m) => {
+export const getRank = (arr, n, m) => {
+    const a = [];
+    for (let i = 0; i < m; ++i) a.push(arr[i]);
+    a.sort();
+    console.log(a);
     const factorial = [1];
     for (let i = 1; i <= n; ++i) factorial.push(factorial[i - 1] * i);
     const comb = (n, k) => {
