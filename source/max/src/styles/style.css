@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#fortuneCookies {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+/* for the fortune cookie images */
+.fortuneCookie {  
+    background-image: url('../../assets/images/cookie.png');
+    background-size: cover;
+    width: 15%; 
+    /* height gets handled in handler.js */
+    position: relative;
+    border-radius: 50%;
+    margin: 0 5px; 
+    transition: background-image 0.3s;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+/* show the cracked cookie image on hover */
+.fortuneCookie:hover {
+    background-image: url('../../assets/images/cookiecrack.png');
+}
+/* when the user clicks on the cookie, open it */
+.fortuneCookie.open {
+    background-image: url('../../assets/images/cookiepaper.png');
+}
+/* for the "tarot" images on the cookie paper */
+.fortuneCookie img {
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
+}

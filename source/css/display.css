@@ -49,6 +49,7 @@ p {
 
 .display-cookie>img:hover {
     cursor: pointer;
+    filter: opacity(50%);
 }
 
 .position-relative {
