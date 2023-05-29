@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @keyframes moveAndScale {
+      0% {
+        transform: translateX(0px) scale(1.5);
+      }
+      100% {
+        transform: translateX(400px) scale(1);
+      }
+    }
+
+    .animated-img {
+      animation: moveAndScale 3s 1 forwards;
+    }
+  </style>
+</head>
+<body>
+  <img class="animated-img" src="img/tarot_card/emperor.png" alt="Animated Image">
+</body>
+</html>
