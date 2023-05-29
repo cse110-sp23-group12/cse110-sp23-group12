@@ -49,10 +49,11 @@ const cardAnimation = async (id, kth) => {
     const bigCard = document.createElement('img');
     bigCard.setAttribute('src', `img/${config.cards[id].filename}`);
     bigCard.setAttribute('class', 'big-card');
+    bigCard.setAttribute('style', 'padding: 8px; background-color: white; border-radius: 8px; border: 2px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); box-sizing:border-box;');
     plate.appendChild(bigCard);
 
     setTimeout(() => {
-        bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
+        bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards; padding: 8px; background-color: white; border-radius: 8px; border: 2px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);box-sizing:border-box;`);
     }, 1000);
     await new Promise(resolve => setTimeout(resolve, 3000));
 };
