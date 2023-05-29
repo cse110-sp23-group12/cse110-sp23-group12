@@ -1,4 +1,8 @@
 # cse110-sp23-group12
+## fortune cookie
+[https://cse110-sp23-group12.github.io/cse110-sp23-group12/](https://cse110-sp23-group12.github.io/cse110-sp23-group12/)  
+[https://cse110-sp23-group12.github.io/cse110-sp23-group12/local.html](https://cse110-sp23-group12.github.io/cse110-sp23-group12/local.html)
+
 ## About Us:
 [Team 12 Fortune Cookies Page](admin/team.md)
 

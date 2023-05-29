@@ -2,15 +2,10 @@ import { randomChoose } from './utils.js';
 import { getAnswer } from './request.js';
 
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
-// for (let i = 0; i < selectedCards.length; ++i) {
-//     console.log(config.cards[selectedCards[i]].name);
-// }
-// console.log(selectedCards);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 const promiseList = [getAnswer(selectedCards)];
 const valid = Array(config.cardPool).fill(1);
-let apiResponse;
 
 const insertCookies = () => {
     const cookieContainer = document.getElementById('display-bakeware');
@@ -57,7 +52,7 @@ const cardAnimation = async (id, kth) => {
     setTimeout(() => {
         bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    return new Promise(resolve => setTimeout(resolve, 3000));
 };
 
 window.onload = () => {
@@ -87,13 +82,10 @@ const select = async (id) => {
     cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
     const ck = document.getElementById(`cookie${id}`).children[0];
     ck.classList.add('display-none');
-
-    if (totalSelected < 2) await cardAnimation(c, totalSelected++);
-    else {
-        await cardAnimation(c, totalSelected);
-        ++totalSelected;
+    animationPromise.push(cardAnimation(c, totalSelected++));
+    if (totalSelected === config.selectedLimit) {
+        Promise.all(animationPromise).then(show());
     }
-    if (totalSelected === config.selectedLimit) show();
 };
 
 const show = () => {
