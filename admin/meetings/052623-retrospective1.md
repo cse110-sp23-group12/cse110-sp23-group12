@@ -57,3 +57,8 @@
 
 <img width="375" alt="Screen Shot 2023-05-26 at 9 07 04 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/2e13c89b-7de3-4edf-991c-6fc0dd981c7e">
 
+<img width="1440" alt="Screenshot 2023-05-26 at 5 17 09 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/69173057/7ac93059-73fa-467e-bf62-55da3fb86ec3">
+
+<img width="1440" alt="Screenshot 2023-05-26 at 5 33 52 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/69173057/2987eb77-4a0c-4c07-ac6b-bca52461ee86">
+
+
