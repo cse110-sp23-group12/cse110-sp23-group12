@@ -10,6 +10,7 @@ const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 const promiseList = [getAnswer(selectedCards)];
 const valid = Array(config.cardPool).fill(1);
+let apiResponse;
 
 const insertCookies = () => {
     const cookieContainer = document.getElementById('display-bakeware');
@@ -69,6 +70,13 @@ window.onload = () => {
             });
         }
     });
+    let tarots;
+    let cnt = 0;
+    while (tarots.length < config.selectedLimit) {
+        tarots.add(selectedCards[cnt].name);
+        cnt++;
+    }
+    apiResponse = getResponseFromAPI(input, tarots);
 };
 
 const select = async (id) => {
@@ -92,6 +100,7 @@ const show = () => {
     Promise.all(promiseList).then(res => {
         setTimeout(() => {
             document.getElementById('result-response-text').innerText = res[0].answer;
+            document.getElementById('result-response-text').innerText = apiResponse;
             document.getElementById('display-document').classList.add('display-none');
             document.getElementById('display-document').classList.remove('display-document');
             document.getElementById('result-document').classList.remove('display-none');
