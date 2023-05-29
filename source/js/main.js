@@ -1,12 +1,18 @@
 window.onload = () => {
     const button = document.getElementById('landing-submit-button');
+    const textInput = document.getElementById('text-input');
     button.addEventListener('click', () => {
         landingSubmit();
+    });
+    textInput.addEventListener('keydown', (event) => {
+        if (event.keyCode === 13 || event.key === 'Enter') {
+            landingSubmit();
+        }
     });
 };
 
 const landingSubmit = () => {
     const input = document.getElementById('text-input');
     if (input.value === '') return;
-    window.location.replace(`display${(typeof dbVersion === 'undefined') ? '' : '_local'}.html`);
+    window.location.href = `display${(typeof dbVersion === 'undefined') ? '' : '_local'}.html`;
 };

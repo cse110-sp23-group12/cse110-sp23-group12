@@ -9,6 +9,7 @@ const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 const promiseList = [getAnswer(selectedCards)];
+const valid = Array(config.cardPool).fill(1);
 
 const insertCookies = () => {
     const cookieContainer = document.getElementById('display-bakeware');
@@ -45,6 +46,19 @@ const insertResults = () => {
     }
 };
 
+const cardAnimation = async (id, kth) => {
+    const plate = document.getElementById('plate-container');
+    const bigCard = document.createElement('img');
+    bigCard.setAttribute('src', `img/${config.cards[id].filename}`);
+    bigCard.setAttribute('class', 'big-card');
+    plate.appendChild(bigCard);
+
+    setTimeout(() => {
+        bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
+    }, 1000);
+    await new Promise(resolve => setTimeout(resolve, 3000));
+};
+
 window.onload = () => {
     insertCookies();
     insertResults();
@@ -57,14 +71,21 @@ window.onload = () => {
     });
 };
 
-const select = (id) => {
+const select = async (id) => {
+    if (!valid[id]) return;
+    valid[id] = 0;
     const c = selectedCards[totalSelected];
     if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
     cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
-    const imgDom = document.getElementById(`selected-cookie${totalSelected}`);
-    imgDom.classList.remove('display-none');
-    imgDom.setAttribute('src', `img/${config.cards[c].filename}`);
-    if (++totalSelected === config.selectedLimit) show();
+    const ck = document.getElementById(`cookie${id}`).children[0];
+    ck.classList.add('display-none');
+
+    if (totalSelected < 2) await cardAnimation(c, totalSelected++);
+    else {
+        await cardAnimation(c, totalSelected);
+        ++totalSelected;
+    }
+    if (totalSelected === config.selectedLimit) show();
 };
 
 const show = () => {

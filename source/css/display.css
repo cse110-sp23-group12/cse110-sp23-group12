@@ -49,6 +49,7 @@ p {
 
 .display-cookie>img:hover {
     cursor: pointer;
+    filter: opacity(50%);
 }
 
 .position-relative {
@@ -77,4 +78,30 @@ p {
 
 .display-none {
     display: none;
+}
+
+.big-card {
+    position: absolute;
+    height: 200%;
+    top: -220%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@keyframes move-card-0 {
+    100% {
+        transform: translate(-50%, 0) translateX(-100%) translateY(80%) scale(0.6);
+    }
+}
+
+@keyframes move-card-1 {
+    100% {
+        transform: translate(-50%, 0) translateX(0%) translateY(80%) scale(0.6);
+    }
+}
+
+@keyframes move-card-2 {
+    100% {
+        transform: translate(-50%, 0) translateX(100%) translateY(80%) scale(0.6);
+    }
 }
