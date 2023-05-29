@@ -1,7 +1,10 @@
 import { randomChoose } from './utils.js';
 import { getAnswer } from './request.js';
-
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
+// for (let i = 0; i < selectedCards.length; ++i) {
+//     console.log(config.cards[selectedCards[i]].name);
+// }
+// console.log(selectedCards);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 const promiseList = [getAnswer(selectedCards)];
@@ -23,7 +26,6 @@ const insertCookies = () => {
         cookieList[ids[i]] = divDom;
     }
 };
-
 const insertResults = () => {
     const resultContainer = document.getElementById('result-cards');
     for (let i = 0; i < selectedCards.length; ++i) {
@@ -52,7 +54,7 @@ const cardAnimation = async (id, kth) => {
     setTimeout(() => {
         bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
-    return new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 3000));
 };
 
 window.onload = () => {
@@ -65,34 +67,34 @@ window.onload = () => {
             });
         }
     });
-    let tarots;
-    let cnt = 0;
-    while (tarots.length < config.selectedLimit) {
-        tarots.add(selectedCards[cnt].name);
-        cnt++;
-    }
-    apiResponse = getResponseFromAPI(input, tarots);
 };
 
+const select = (id) => {
 const select = async (id) => {
     if (!valid[id]) return;
     valid[id] = 0;
     const c = selectedCards[totalSelected];
     if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
     cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
+    const imgDom = document.getElementById(`selected-cookie${totalSelected}`);
+    imgDom.classList.remove('display-none');
+    imgDom.setAttribute('src', `img/${config.cards[c].filename}`);
+    if (++totalSelected === config.selectedLimit) show();
     const ck = document.getElementById(`cookie${id}`).children[0];
     ck.classList.add('display-none');
-    animationPromise.push(cardAnimation(c, totalSelected++));
-    if (totalSelected === config.selectedLimit) {
-        Promise.all(animationPromise).then(show());
+
+    if (totalSelected < 2) await cardAnimation(c, totalSelected++);
+    else {
+        await cardAnimation(c, totalSelected);
+        ++totalSelected;
     }
+    if (totalSelected === config.selectedLimit) show();
 };
 
 const show = () => {
     Promise.all(promiseList).then(res => {
         setTimeout(() => {
             document.getElementById('result-response-text').innerText = res[0].answer;
-            document.getElementById('result-response-text').innerText = apiResponse;
             document.getElementById('display-document').classList.add('display-none');
             document.getElementById('display-document').classList.remove('display-document');
             document.getElementById('result-document').classList.remove('display-none');
