@@ -57,6 +57,6 @@
 
 <img width="375" alt="Screen Shot 2023-05-26 at 9 07 04 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/2e13c89b-7de3-4edf-991c-6fc0dd981c7e">
 
-[Retrium Meeting Screenshot](../misc/images-for-md/Retrium-Meeting Screenshot on 2023-05-26.png)
+![Retrium Meeting Screenshot](../misc/images-for-md/Retrium-Meeting Screenshot on 2023-05-26.png)
 
 
