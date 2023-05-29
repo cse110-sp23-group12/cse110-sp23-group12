@@ -69,17 +69,12 @@ window.onload = () => {
     });
 };
 
-const select = (id) => {
 const select = async (id) => {
     if (!valid[id]) return;
     valid[id] = 0;
     const c = selectedCards[totalSelected];
     if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
     cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
-    const imgDom = document.getElementById(`selected-cookie${totalSelected}`);
-    imgDom.classList.remove('display-none');
-    imgDom.setAttribute('src', `img/${config.cards[c].filename}`);
-    if (++totalSelected === config.selectedLimit) show();
     const ck = document.getElementById(`cookie${id}`).children[0];
     ck.classList.add('display-none');
 
