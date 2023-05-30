@@ -49,6 +49,7 @@
 - need a clearer plan and assignment of tasks and goals
 
 ## Images
+![Retrium Meeting Radar Screenshot](/admin/misc/images-for-md/Radar1.png)
 ![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retro1.png)
 ![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retro2.png)
 ![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retro3.png)
