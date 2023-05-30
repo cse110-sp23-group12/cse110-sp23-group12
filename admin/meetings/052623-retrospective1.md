@@ -49,13 +49,10 @@
 - need a clearer plan and assignment of tasks and goals
 
 ## Images
-<img width="588" alt="Screen Shot 2023-05-26 at 9 05 31 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/7819cedd-70da-4493-b773-7bf46d0b269f">
+![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retro1.png)
+![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retro2.png)
+![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retro3.png)
 
-<img width="441" alt="Screen Shot 2023-05-26 at 9 06 04 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/9b408bbd-b36a-4758-b616-cb77d622aef5">
-
-<img width="245" alt="Screen Shot 2023-05-26 at 9 02 40 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/8f0ba4df-1452-4102-ab73-8dbf01a34796">
-
-<img width="375" alt="Screen Shot 2023-05-26 at 9 07 04 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/2e13c89b-7de3-4edf-991c-6fc0dd981c7e">
 
 ![Retrium Meeting Screenshot](/admin/misc/images-for-md/Retrium-Meeting_Screenshot_on_2023-05-26.png)
 
