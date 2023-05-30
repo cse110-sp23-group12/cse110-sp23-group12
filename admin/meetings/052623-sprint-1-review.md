@@ -37,5 +37,7 @@ Takeaways:
 - we need to keep working on getting a working minimum viable product
 
 ## Some Images
-![Retrium Meeting Screenshot](/admin/misc/images-for-md/TeamSprintReview.png)
+![Team Sprint Review Screenshot](/admin/misc/images-for-md/TeamSprintReview.png)
+
+![CI CD Demo](/admin/misc/images-for-md/CICD_Demo.png)
 
