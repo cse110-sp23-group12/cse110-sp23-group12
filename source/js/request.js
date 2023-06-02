@@ -1,4 +1,5 @@
 import { getRank } from './utils.js';
+import { getResponseFromAPI } from './app.js';
 
 /**
  * 
@@ -45,13 +46,19 @@ export const getAnswerLocal = async (data) => {
             }
             localStorage.setItem(key, JSON.stringify(dbList));
             resolve({ answer: index.s });
-            reject(new Error('error'));
+            reject(new Error('error occurred'));
         }, config.localDelay);
     });
 };
 
-export const getAnswer = (data) => {
-    return (typeof dbVersion === 'undefined') ? getRequest(data) : getAnswerLocal(data);
+// export const getAnswer = (data) => {
+//     return (typeof dbVersion === 'undefined') ? getRequest(data) : getAnswerLocal(data);
+// };
+
+export const getAnswer = async (data) => {
+    const message = '';
+    const tarots = data.map(id => config.cards[id].name);
+    return await getResponseFromAPI(message, tarots);
 };
 
 // module.exports = { getRequest, getAnswerLocal, getAnswer };

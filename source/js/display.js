@@ -1,9 +1,14 @@
 import { randomChoose } from './utils.js';
 import { getAnswer } from './request.js';
+import { getResponseFromAPI } from './app.js';
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
-const promiseList = [getAnswer(selectedCards)];
+// const promiseList = [getAnswer(selectedCards)];
+// const message = localStorage.getItem('userMessage');
+// console.log('message: ', message);
+// const tarots = selectedCards.map(id => config.cards[id].name);
+// const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
 
@@ -84,9 +89,14 @@ const select = async (id) => {
 };
 
 const show = () => {
-    Promise.all(promiseList).then(res => {
+    Promise.all(animationPromise).then(async () => {
+        const message = localStorage.getItem('userMessage');
+        console.log(message);
+        const tarots = selectedCards.map(id => config.cards[id].name);
+        const promiseList = [getResponseFromAPI(message, tarots)];
+        const fortune = await Promise.all(promiseList).then((responses) => responses[0]);
         setTimeout(() => {
-            document.getElementById('result-response-text').innerText = res[0].answer;
+            document.getElementById('result-response-text').innerText = fortune;
             document.getElementById('display-document').classList.add('display-none');
             document.getElementById('display-document').classList.remove('display-document');
             document.getElementById('result-document').classList.remove('display-none');

@@ -5,7 +5,8 @@
  * @param {*} tarots three tarot card names
  * @returns the fortune produced by GPT
  */
-async function getResponseFromAPI(message, tarots) {
+export async function getResponseFromAPI(message, tarots) {
+    console.log('message = ', message);
     // Link to server to run to get the API key
     const endpoint = 'http://localhost:3333/api';
     let answer;

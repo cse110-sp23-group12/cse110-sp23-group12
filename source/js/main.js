@@ -15,4 +15,7 @@ const landingSubmit = () => {
     const input = document.getElementById('text-input');
     if (input.value === '') return;
     window.location.href = `display${(typeof dbVersion === 'undefined') ? '' : '_local'}.html`;
+    console.log('message=====', localStorage.getItem('userMessage'));
+    localStorage.setItem('userMessage', input.value);
+    console.log(localStorage.getItem('userMessage'));
 };
