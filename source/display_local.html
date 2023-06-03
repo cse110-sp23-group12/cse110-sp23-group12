@@ -17,6 +17,7 @@
 </head>
 <body>
     <div class="display-document" id="display-document">
+    <!-- <div class="display-none" id="display-document"> -->
         <div class="display-bakeware position-relative" id="display-bakeware">
         </div>
         <div class="position-relative" id="plate-container">
@@ -28,16 +29,18 @@
             </div>
         </div>
     </div>
+    <!-- <div class="result-document" id="result-document"> -->
     <div class="display-none" id="result-document">
         <div class="result-cards" id="result-cards">
         </div>
-        <div class="result-response">
+        <div class="result-response loading-animation">
             <img src="img/logo.png" class="logo-img" alt="logo" draggable="false" />
-            <p class="result-response-title">Your Fortune:</p>
+            <!-- <p class="result-response-title">Your Fortune:</p> -->
+            <p class="result-response-title"></p>
             <p class="result-response-text" id="result-response-text"></p>
         </div>
         <div style="position: absolute; right:30px; bottom:25px">
-            <div class="display-button" id="display-retry-button"  onclick="location.href='index.html'">
+            <div class="display-button" id="display-retry-button"  onclick="location.href='local.html'">
                 <p>Retry!</p>
             </div>
         </div>

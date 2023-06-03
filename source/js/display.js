@@ -11,6 +11,8 @@ let totalSelected = 0;
 // const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
+const message = localStorage.getItem('userMessage');
+const promiseList = [getAnswer(message, selectedCards)];
 
 /**
  * Inserts cookies into the cookie container.
@@ -65,11 +67,10 @@ const cardAnimation = async (id, kth) => {
     const bigCard = document.createElement('img');
     bigCard.setAttribute('src', `img/${config.cards[id].filename}`);
     bigCard.setAttribute('class', 'big-card');
-    bigCard.setAttribute('style', 'padding: 8px; background-color: white; border-radius: 8px; border: 2px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); box-sizing:border-box;');
     plate.appendChild(bigCard);
 
     setTimeout(() => {
-        bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards; padding: 8px; background-color: white; border-radius: 8px; border: 2px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);box-sizing:border-box;`);
+        bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
     return new Promise(resolve => setTimeout(resolve, 3000));
 };
@@ -111,19 +112,24 @@ const select = async (id) => {
  * Displays the final fortune results.
  */
 const show = () => {
+    const block = document.getElementsByClassName('result-response')[0];
     Promise.all(animationPromise).then(async () => {
-        const message = localStorage.getItem('userMessage');
+        // const message = localStorage.getItem('userMessage');
         // console.log(message);
         // const tarots = selectedCards.map(id => config.cards[id].name);
         // const promiseList = [getResponseFromAPI(message, tarots)];
-        const promiseList = [getAnswer(message, selectedCards)];
-        const fortune = await Promise.all(promiseList).then((responses) => responses[0].answer);
+        // const promiseList = [getAnswer(message, selectedCards)];
+        // const fortune = await Promise.all(promiseList).then((responses) => responses[0].answer);
         setTimeout(() => {
-            document.getElementById('result-response-text').innerText = fortune;
             document.getElementById('display-document').classList.add('display-none');
             document.getElementById('display-document').classList.remove('display-document');
             document.getElementById('result-document').classList.remove('display-none');
             document.getElementById('result-document').classList.add('result-document');
-        }, 1000);
+        }, 500);
+        Promise.all(promiseList).then((responses) => {
+            block.classList.remove('loading-animation');
+            document.getElementsByClassName('result-response-title')[0].innerText = 'Your Fortune:';
+            document.getElementById('result-response-text').innerText = responses[0].answer;
+        });
     });
 };

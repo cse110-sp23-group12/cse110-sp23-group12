@@ -86,6 +86,28 @@ p {
     top: -220%;
     left: 50%;
     transform: translate(-50%, 0);
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    box-sizing:border-box;
+}
+
+.loading-animation {
+    background: linear-gradient(to right, #ecce95 0%, #ecce95 50%, #fcdea5 50%, #fcdea5 100%);
+    background-size: 200% 100%;
+    animation: loading-animation 2s linear infinite;
+}
+
+@keyframes loading-animation {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
 }
 
 @keyframes move-card-0 {

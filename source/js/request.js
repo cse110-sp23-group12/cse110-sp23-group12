@@ -27,7 +27,8 @@ export const getRequest = (data) => {
  * @returns the fortune produced by GPT
  */
 export const getAnswerAPI = async (message, data) => {
-    const API_KEY = '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';
+    console.log(message);
+    const API_KEY = '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';
     return new Promise((resolve, reject) => {
         const apiResponse = fetch('https://api.openai.com/v1/completions', {
             method: 'POST',
@@ -37,7 +38,7 @@ export const getAnswerAPI = async (message, data) => {
             },
             body: JSON.stringify({
                 model: 'text-davinci-003',
-                prompt: `I am a fortune teller who speaks using mystic language. Using the tarot cards ${data[0]}, ${data[1]}, and ${data[2]}, I will respond to your message with your fortune.\n\nHuman: ${message}\n\nAI:`,
+                prompt: `I am a fortune teller who speaks using mystic language. Using the tarot cards ${config.cards[parseInt(data[0])].prompt}, ${config.cards[parseInt(data[1])].prompt}, and ${config.cards[parseInt(data[2])].prompt}, I will respond to your message with your fortune.\n\nHuman: ${message}\n\nAI:`,
                 temperature: 0.75,
                 max_tokens: 100,
                 top_p: 1,
