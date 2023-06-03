@@ -19,6 +19,13 @@ export const getRequest = (data) => {
     });
 };
 
+/**
+ * Retrieves an answer locally from the database.
+ * If the local database version is outdated, it updates the database from a JSON file.
+ * 
+ * @param {Array<number>} data - The data used to retrieve the answer.
+ * @returns {Promise<{ answer: string }>} A promise that resolves to an object containing the answer.
+ */
 export const getAnswerLocal = async (data) => {
     if (localStorage.getItem('version') !== dbVersion) {
         localStorage.clear();
@@ -55,6 +62,12 @@ export const getAnswerLocal = async (data) => {
 //     return (typeof dbVersion === 'undefined') ? getRequest(data) : getAnswerLocal(data);
 // };
 
+/**
+ * Retrieves an answer either from the local database or from an API based on the availability of `dbVersion`.
+ * 
+ * @param {Array<number>} data - The data used to retrieve the answer.
+ * @returns {Promise<string>} A promise that resolves to the answer string.
+ */
 export const getAnswer = async (data) => {
     const message = '';
     const tarots = data.map(id => config.cards[id].name);
