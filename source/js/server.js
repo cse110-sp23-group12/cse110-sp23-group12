@@ -8,9 +8,14 @@ app.use(cors());
 app.use(express.static('public'));
 
 /**
+ * Handles the API request to securely access the API key and retrieve data from the actual API.
  * Used to securely access the API key.
  * Only drawback is that the API will only work on
  * my (Max's) machine with this approach.
+ * 
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Promise<void>} A promise that resolves once the API response is sent back to the client.
  */
 app.post('/api', express.json(), async (req, res) => {
     // Fetch data from the actual API
@@ -30,4 +35,7 @@ app.post('/api', express.json(), async (req, res) => {
     res.json(apiData);
 });
 
+/**
+ * Starts the server on the specified port.
+ */
 app.listen(3333, () => console.log('Server running on port 3333'));
