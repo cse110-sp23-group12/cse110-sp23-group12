@@ -26,7 +26,7 @@ export const getAnswerAPI = async (message, data) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer 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`
+                Authorization: 'Bearer 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'
             },
             body: JSON.stringify({
                 model: 'text-davinci-003',
@@ -42,10 +42,10 @@ export const getAnswerAPI = async (message, data) => {
             res.json().then(json => {
                 resolve({ answer: json.choices[0].text });
                 // console.log(json.choices[0].text);
-            })
+            });
         });
     });
-}
+};
 
 export const getAnswerLocal = async (data) => {
     if (localStorage.getItem('version') !== dbVersion) {
@@ -73,7 +73,7 @@ export const getAnswerLocal = async (data) => {
                 for (let i = 0; i < dbList.length; ++i) dbList[i].used = 0;
             }
             localStorage.setItem(key, JSON.stringify(dbList));
-            resolve({ answer: index['s'] });
+            resolve({ answer: index.s });
             reject(new Error('error occurred'));
         }, config.localDelay);
     });
