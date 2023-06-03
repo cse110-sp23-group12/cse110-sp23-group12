@@ -6,6 +6,9 @@ const cardList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 let reset = 0;
 
+/**
+ * Inserts cards into the card container.
+ */
 const insertCards = () => {
     const cardContainer = document.getElementById('card-container');
     const ids = randomChoose(config.cardPool, config.cardNumber);
@@ -39,6 +42,11 @@ window.onload = () => {
     // console.log(cardList);
 };
 
+/**
+ * Event handler for selecting a card.
+ * 
+ * @param {string} id - The ID of the selected card.
+ */
 const select = (id) => {
     if (reset) return;
     // console.log(cardList[id]);
@@ -57,6 +65,9 @@ const select = (id) => {
     selectedCards[id] ^= 1;
 };
 
+/**
+ * Event handler for submitting selected cards.
+ */
 const submit = () => {
     if (totalSelected !== parseInt(config.selectedLimit)) return;
     if (reset) {
