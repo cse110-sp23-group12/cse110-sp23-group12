@@ -12,6 +12,9 @@ let totalSelected = 0;
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
 
+/**
+ * Inserts cookies into the cookie container.
+ */
 const insertCookies = () => {
     const cookieContainer = document.getElementById('display-bakeware');
     const ids = randomChoose(config.cardPool, config.cardNumber);
@@ -29,6 +32,9 @@ const insertCookies = () => {
     }
 };
 
+/**
+ * Inserts results into the result container.
+ */
 const insertResults = () => {
     const resultContainer = document.getElementById('result-cards');
     for (let i = 0; i < selectedCards.length; ++i) {
@@ -47,6 +53,13 @@ const insertResults = () => {
     }
 };
 
+/**
+ * Performs the card animation.
+ * 
+ * @param {string} id - The ID of the card to animate.
+ * @param {number} kth - The kth card being animated.
+ * @returns {Promise} A promise that resolves after the animation.
+ */
 const cardAnimation = async (id, kth) => {
     const plate = document.getElementById('plate-container');
     const bigCard = document.createElement('img');
@@ -73,6 +86,12 @@ window.onload = () => {
     });
 };
 
+/**
+ * Event handler for selecting a cookie.
+ * 
+ * @param {string} id - The ID of the selected cookie.
+ * @returns {Promise} A promise that resolves after the selection process.
+ */
 const select = async (id) => {
     if (!valid[id]) return;
     valid[id] = 0;
@@ -88,6 +107,9 @@ const select = async (id) => {
     }
 };
 
+/**
+ * Displays the final fortune results.
+ */
 const show = () => {
     Promise.all(animationPromise).then(async () => {
         const message = localStorage.getItem('userMessage');
