@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: utils.js</title>
+    <title>JSDoc: Source: main.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: utils.js</h1>
+    <h1 class="page-title">Source: main.js</h1>
 
     
 
@@ -27,37 +27,41 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * random choose
- * @param {number} n
- * @param {number} k 
- * @returns {Object} 
+ * Event handler for the window's onload event.
  */
-export const randomChoose = (n, k) => {
-    const num = [];
-    for (let i = 0; i &lt; n; ++i) num.push(i);
-    const result = [];
-    for (let i = 0; i &lt; k; ++i) {
-        const index = Math.floor(Math.random() * num.length);
-        result.push(num[index]);
-        num.splice(index, 1);
-    }
-    return result;
+window.onload = () => {
+    const button = document.getElementById('landing-submit-button');
+    const textInput = document.getElementById('text-input');
+    /**
+     * Event handler for the click event on the landing submit button.
+     */
+    button.addEventListener('click', () => {
+        landingSubmit();
+    });
+    /**
+     * Event handler for the keydown event on the text input field.
+     * Triggers the landingSubmit function when the Enter key is pressed.
+     * 
+     * @param {KeyboardEvent} event - The keyboard event object.
+     */
+    textInput.addEventListener('keydown', (event) => {
+        if (event.keyCode === 13 || event.key === 'Enter') {
+            landingSubmit();
+        }
+    });
 };
 
-export const getRank = (arr, n, m) => {
-    const a = [];
-    for (let i = 0; i &lt; m; ++i) a.push(arr[i]);
-    a.sort((x, y) => { return x - y; });
-    const factorial = [1];
-    for (let i = 1; i &lt;= n; ++i) factorial.push(factorial[i - 1] * i);
-    const comb = (n, k) => {
-        if (k === 0) return 1;
-        if (n === 0 || n &lt; k) return 0;
-        return factorial[n] / factorial[k] / factorial[n - k];
-    };
-    let rank = comb(n, m);
-    for (let i = 0; i &lt; m; ++i) rank -= comb(n - a[i] - 1, m - i);
-    return rank - 1;
+/**
+ * Handles the submission on the landing page.
+ * Redirects to the appropriate page and stores the user's message in localStorage.
+ */
+const landingSubmit = () => {
+    const input = document.getElementById('text-input');
+    if (input.value === '') return;
+    window.location.href = `display${(typeof dbVersion === 'undefined') ? '' : '_local'}.html`;
+    console.log('message=====', localStorage.getItem('userMessage'));
+    localStorage.setItem('userMessage', input.value);
+    console.log(localStorage.getItem('userMessage'));
 };
 </code></pre>
         </article>
