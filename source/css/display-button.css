@@ -1,0 +1,40 @@
+.display-button>p {
+    font-family: 'Jolly Lodger', cursive;
+    color: #875426;
+    font-size: 2vw;
+    margin: auto;
+    user-select: none;
+}
+
+
+.display-button {
+    width: 6vw;
+    height: 3vw;
+    border: 1px solid black;
+    background-color: #fcdea5;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0.3vw 0.3vw black;
+}
+
+.display-button:hover {
+    cursor: pointer;
+    box-shadow: 0.2vw 0.2vw #202040;
+}
+
+.display-button:active {
+    box-shadow: 0.2vw 0.2vw #602040;
+}
+
+
+@media (width <= 767px) {
+
+    .display-button {
+        width: 8vh;
+        height: 4vh;
+    }
+
+    .display-button>p {
+        font-size: 3vh;
+    }
+}
