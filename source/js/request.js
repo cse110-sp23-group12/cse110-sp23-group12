@@ -20,6 +20,43 @@ export const getRequest = (data) => {
 };
 
 /**
+ * Uses the user's input and the tarot cards chosen to craft a prompt wrapper
+ * and retrieve a unique fortune made by the GPT API.
+ * @param {*} message the user's inputted message
+ * @param {*} tarots three tarot card ids
+ * @returns the fortune produced by GPT
+ */
+export const getAnswerAPI = async (message, data) => {
+    const API_KEY = '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';
+    return new Promise((resolve, reject) => {
+        const apiResponse = fetch('https://api.openai.com/v1/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${API_KEY}`
+            },
+            body: JSON.stringify({
+                model: 'text-davinci-003',
+                prompt: `I am a fortune teller who speaks using mystic language. Using the tarot cards ${data[0]}, ${data[1]}, and ${data[2]}, I will respond to your message with your fortune.\n\nHuman: ${message}\n\nAI:`,
+                temperature: 0.75,
+                max_tokens: 100,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0
+            })
+        });
+        apiResponse.then(res => {
+            res.json().then(json => {
+                console.log(json);
+                resolve({ answer: json.choices[0].text });
+            });
+        }).catch(err => {
+            reject(err);
+        });
+    });
+};
+
+/**
  * Retrieves an answer locally from the database.
  * If the local database version is outdated, it updates the database from a JSON file.
  * 
@@ -68,10 +105,13 @@ export const getAnswerLocal = async (data) => {
  * @param {Array<number>} data - The data used to retrieve the answer.
  * @returns {Promise<string>} A promise that resolves to the answer string.
  */
-export const getAnswer = async (data) => {
-    const message = '';
-    const tarots = data.map(id => config.cards[id].name);
-    return await getResponseFromAPI(message, tarots);
+export const getAnswer = (message, data) => {
+    return (typeof dbVersion === 'undefined') ? getAnswerAPI(message, data) : getAnswerLocal(data);
 };
+// export const getAnswer = async (data) => {
+//     const message = '';
+//     const tarots = data.map(id => config.cards[id].name);
+//     return await getResponseFromAPI(message, tarots);
+// };
 
 // module.exports = { getRequest, getAnswerLocal, getAnswer };
