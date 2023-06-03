@@ -19,6 +19,34 @@ export const getRequest = (data) => {
     });
 };
 
+export const getAnswerAPI = async (message, data) => {
+    const endpoint = 'https://api.openai.com/v1/completions';
+    return new Promise((resolve, reject) => {
+        const apiResponse = fetch('https://api.openai.com/v1/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer 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`
+            },
+            body: JSON.stringify({
+                model: 'text-davinci-003',
+                prompt: `I am a fortune teller who speaks using mystic language. Using the tarot cards ${data[0]}, ${data[1]}, and ${data[2]}, I will respond to your message with your fortune.\n\nHuman: ${message}\n\nAI:`,
+                temperature: 0.75,
+                max_tokens: 100,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0
+            })
+        });
+        apiResponse.then(res => {
+            res.json().then(json => {
+                resolve({ answer: json.choices[0].text });
+                // console.log(json.choices[0].text);
+            })
+        });
+    });
+}
+
 export const getAnswerLocal = async (data) => {
     if (localStorage.getItem('version') !== dbVersion) {
         localStorage.clear();
@@ -45,20 +73,20 @@ export const getAnswerLocal = async (data) => {
                 for (let i = 0; i < dbList.length; ++i) dbList[i].used = 0;
             }
             localStorage.setItem(key, JSON.stringify(dbList));
-            resolve({ answer: index.s });
+            resolve({ answer: index['s'] });
             reject(new Error('error occurred'));
         }, config.localDelay);
     });
 };
 
-// export const getAnswer = (data) => {
-//     return (typeof dbVersion === 'undefined') ? getRequest(data) : getAnswerLocal(data);
-// };
-
-export const getAnswer = async (data) => {
-    const message = '';
-    const tarots = data.map(id => config.cards[id].name);
-    return await getResponseFromAPI(message, tarots);
+export const getAnswer = (message, data) => {
+    return (typeof dbVersion === 'undefined') ? getAnswerAPI(message, data) : getAnswerLocal(data);
 };
+
+// export const getAnswer = async (message, data) => {
+//     const message = '';
+//     const tarots = data.map(id => config.cards[id].name);
+//     return await getResponseFromAPI(message, tarots);
+// };
 
 // module.exports = { getRequest, getAnswerLocal, getAnswer };

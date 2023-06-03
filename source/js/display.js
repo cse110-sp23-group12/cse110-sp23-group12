@@ -78,7 +78,7 @@ const select = async (id) => {
     valid[id] = 0;
     const c = selectedCards[totalSelected];
     if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
-    cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
+    // cookieList[id].children[0].setAttribute('src', 'img/cookie1.svg');
     const ck = document.getElementById(`cookie${id}`).children[0];
     ck.classList.add('display-none');
 
@@ -93,8 +93,10 @@ const show = () => {
         const message = localStorage.getItem('userMessage');
         console.log(message);
         const tarots = selectedCards.map(id => config.cards[id].name);
-        const promiseList = [getResponseFromAPI(message, tarots)];
-        const fortune = await Promise.all(promiseList).then((responses) => responses[0]);
+        // const promiseList = [getResponseFromAPI(message, tarots)];
+        // const promiseList = [getAnswer(message, tarots)];
+        const promiseList = [getAnswer(message, selectedCards)];
+        const fortune = await Promise.all(promiseList).then((responses) => responses[0].answer);
         setTimeout(() => {
             document.getElementById('result-response-text').innerText = fortune;
             document.getElementById('display-document').classList.add('display-none');

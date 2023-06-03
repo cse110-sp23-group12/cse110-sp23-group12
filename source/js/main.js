@@ -14,8 +14,13 @@ window.onload = () => {
 const landingSubmit = () => {
     const input = document.getElementById('text-input');
     if (input.value === '') return;
-    window.location.href = `display${(typeof dbVersion === 'undefined') ? '' : '_local'}.html`;
+    console.log(typeof dbVersion);
+    if (typeof dbVersion !== 'undefined') {
+        window.location.href = 'display_local.html';
+        return;
+    }
     console.log('message=====', localStorage.getItem('userMessage'));
     localStorage.setItem('userMessage', input.value);
     console.log(localStorage.getItem('userMessage'));
+    window.location.href = 'display.html';
 };
