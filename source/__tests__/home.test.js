@@ -56,10 +56,12 @@ describe('Basic user flow for Website', () => {
       const num_cookie = 6;
       const no_cookie = 6;
       const limit = 10;
+      //check cookies id 0-5 exist
       for(let i = 0; i < num_cookie; ++i){
         const cookies = await page.$('#cookie'+ i.toString());
         expect(cookies).toBeTruthy();
       }
+      // checks no more than 6 cookies
       for(let i = no_cookie; i < limit; ++i){
         const cookies = await page.$('#cookie'+ i.toString());
         expect(cookies).toBeFalsy();
