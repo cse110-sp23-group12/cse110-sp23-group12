@@ -69,39 +69,10 @@ describe('Basic user flow for Website', () => {
       
     }, 10000);
 
-    it('select 3 cookies', async () => {
-      //click 3 cookies
-      await page.evaluate(() => {
-        document.querySelector("#cookie0").click();
-        document.querySelector("#cookie1").click();
-        document.querySelector("#cookie2").click();
-      });
-      // get the img html element that inside the cookie div and check if img has the display-none attribute
-      const img0 = await page.$("#cookie0 .display-none");
-      const img1 = await page.$("#cookie1 .display-none");
-      const img2 = await page.$("#cookie2 .display-none");
-      const img3 = await page.$("#cookie3 .display-none");
-      expect(img0).toBeTruthy();
-      expect(img1).toBeTruthy();
-      expect(img2).toBeTruthy();
-      expect(img3).toBeFalsy();
-    }, 10000);
-
-    
-    it('check 3 cards are displayed and being added to the plate', async () => {
-        const data = await page.evaluate(() => {
-            // get all the big-card elements
-          return Array.from(document.querySelectorAll("#plate-container .big-card"));
-
-        });
-        expect(data.length).toBe(3);
-    }, 10000);
-
-    //checks visibility after selected cookies and correct amount of card in plate
     it('checks visibility after selected cookies and correct amount of card in plate', async () => {
       await page.reload();
       const limit = 6;
-      //
+      //choose upper and lower bound randomly
       let lower = Math.floor(Math.random() * limit);
       let upper = Math.ceil(Math.random()*(limit - lower) + lower);
       //make sure no more than 3 to be selected
@@ -126,6 +97,34 @@ describe('Basic user flow for Website', () => {
       //checks the correct amount in plate
       expect(data.length).toBe(upper - lower);
         
+    }, 10000);
+
+    it('select 3 cookies', async () => {
+      await page.reload();
+      //click 3 cookies
+      await page.evaluate(() => {
+        document.querySelector("#cookie0").click();
+        document.querySelector("#cookie1").click();
+        document.querySelector("#cookie2").click();
+      });
+      // get the img html element that inside the cookie div and check if img has the display-none attribute
+      const img0 = await page.$("#cookie0 .display-none");
+      const img1 = await page.$("#cookie1 .display-none");
+      const img2 = await page.$("#cookie2 .display-none");
+      const img3 = await page.$("#cookie3 .display-none");
+      expect(img0).toBeTruthy();
+      expect(img1).toBeTruthy();
+      expect(img2).toBeTruthy();
+      expect(img3).toBeFalsy();
+    }, 10000);
+    
+    it('check 3 cards are displayed and being added to the plate', async () => {
+        const data = await page.evaluate(() => {
+            // get all the big-card elements
+          return Array.from(document.querySelectorAll("#plate-container .big-card"));
+
+        });
+        expect(data.length).toBe(3);
     }, 10000);
 
     it('click button to go to home page', async () => {
