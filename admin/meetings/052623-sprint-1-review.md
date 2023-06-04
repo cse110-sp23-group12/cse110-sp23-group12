@@ -37,7 +37,7 @@ Takeaways:
 - we need to keep working on getting a working minimum viable product
 
 ## Some Images
-<img width="1112" alt="Screen Shot 2023-05-26 at 9 13 14 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/5e2fce55-797a-4f90-aa05-2a3cde9db2bb">
+![Team Sprint Review Screenshot](/admin/misc/images-for-md/TeamSprintReview.png)
 
-<img width="1122" alt="Screen Shot 2023-05-26 at 9 13 28 PM" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/92075815/bc672bb7-755e-4907-a627-5bc676aeeadc">
+![CI CD Demo](/admin/misc/images-for-md/CICD_Demo.png)
 

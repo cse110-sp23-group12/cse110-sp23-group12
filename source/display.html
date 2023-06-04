@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/display.css">
     <link rel="stylesheet" href="css/response.css">
+    <link rel="stylesheet" href="css/display-button.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Ubuntu&display=swap" rel="stylesheet">
@@ -20,14 +21,25 @@
         <div class="position-relative" id="plate-container">
             <img src="img/plate.svg" alt="plate" width="100%" draggable="false" />
         </div>
+        <div style="position: absolute; left:10px; top:10px">
+            <div class="display-button" id="display-retry-button"  onclick="location.href='index.html'">
+                <p>Back!</p>
+            </div>
+        </div>
     </div>
     <div class="display-none" id="result-document">
         <div class="result-cards" id="result-cards">
         </div>
-        <div class="result-response">
+        <div class="result-response loading-animation">
             <img src="img/logo.png" class="logo-img" alt="logo" draggable="false" />
-            <p class="result-response-title">Your Fortune:</p>
+            <!-- <p class="result-response-title">Your Fortune:</p> -->
+            <p class="result-response-title"></p>
             <p class="result-response-text" id="result-response-text"></p>
+            <div style="position: absolute; right:30px; bottom:25px">
+                <div class="display-button" id="display-retry-button"  onclick="location.href='index.html'">
+                    <p>Retry!</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const config = {
     pageName: 'fortune teller',
-    localDelay: 0,
+    localDelay: 500,
     cardPool: 6,
     cardNumber: 6,
     selectedLimit: 3,

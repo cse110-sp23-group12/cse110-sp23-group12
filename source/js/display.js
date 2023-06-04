@@ -1,13 +1,22 @@
 import { randomChoose } from './utils.js';
 import { getAnswer } from './request.js';
-
+import { getResponseFromAPI } from './app.js';
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
-const promiseList = [getAnswer(selectedCards)];
+// const promiseList = [getAnswer(selectedCards)];
+// const message = localStorage.getItem('userMessage');
+// console.log('message: ', message);
+// const tarots = selectedCards.map(id => config.cards[id].name);
+// const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
+const message = localStorage.getItem('userMessage');
+const promiseList = [getAnswer(message, selectedCards)];
 
+/**
+ * Inserts cookies into the cookie container.
+ */
 const insertCookies = () => {
     const cookieContainer = document.getElementById('display-bakeware');
     const ids = randomChoose(config.cardPool, config.cardNumber);
@@ -25,6 +34,9 @@ const insertCookies = () => {
     }
 };
 
+/**
+ * Inserts results into the result container.
+ */
 const insertResults = () => {
     const resultContainer = document.getElementById('result-cards');
     for (let i = 0; i < selectedCards.length; ++i) {
@@ -43,6 +55,13 @@ const insertResults = () => {
     }
 };
 
+/**
+ * Performs the card animation.
+ * 
+ * @param {string} id - The ID of the card to animate.
+ * @param {number} kth - The kth card being animated.
+ * @returns {Promise} A promise that resolves after the animation.
+ */
 const cardAnimation = async (id, kth) => {
     const plate = document.getElementById('plate-container');
     const bigCard = document.createElement('img');
@@ -68,28 +87,49 @@ window.onload = () => {
     });
 };
 
+/**
+ * Event handler for selecting a cookie.
+ * 
+ * @param {string} id - The ID of the selected cookie.
+ * @returns {Promise} A promise that resolves after the selection process.
+ */
 const select = async (id) => {
     if (!valid[id]) return;
     valid[id] = 0;
     const c = selectedCards[totalSelected];
     if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
-    cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
+    // cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
     const ck = document.getElementById(`cookie${id}`).children[0];
     ck.classList.add('display-none');
+
     animationPromise.push(cardAnimation(c, totalSelected++));
     if (totalSelected === config.selectedLimit) {
-        Promise.all(animationPromise).then(show());
+        Promise.all(animationPromise).then(response => show());
     }
 };
 
+/**
+ * Displays the final fortune results.
+ */
 const show = () => {
-    Promise.all(promiseList).then(res => {
+    const block = document.getElementsByClassName('result-response')[0];
+    Promise.all(animationPromise).then(async () => {
+        // const message = localStorage.getItem('userMessage');
+        // console.log(message);
+        // const tarots = selectedCards.map(id => config.cards[id].name);
+        // const promiseList = [getResponseFromAPI(message, tarots)];
+        // const promiseList = [getAnswer(message, selectedCards)];
+        // const fortune = await Promise.all(promiseList).then((responses) => responses[0].answer);
         setTimeout(() => {
-            document.getElementById('result-response-text').innerText = res[0].answer;
             document.getElementById('display-document').classList.add('display-none');
             document.getElementById('display-document').classList.remove('display-document');
             document.getElementById('result-document').classList.remove('display-none');
             document.getElementById('result-document').classList.add('result-document');
-        }, 1000);
+        }, 500);
+        Promise.all(promiseList).then((responses) => {
+            block.classList.remove('loading-animation');
+            document.getElementsByClassName('result-response-title')[0].innerText = 'Your Fortune:';
+            document.getElementById('result-response-text').innerText = responses[0].answer;
+        });
     });
 };

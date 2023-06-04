@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: backup.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: backup.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { randomChoose } from './utils.js';
+import { getAnswer } from './request.js';
+
+const selectedCards = Array(config.cardPool).fill(0);
+const cardList = Array(config.cardPool).fill(0);
+let totalSelected = 0;
+let reset = 0;
+
+/**
+ * Inserts cards into the card container.
+ */
+const insertCards = () => {
+    const cardContainer = document.getElementById('card-container');
+    const ids = randomChoose(config.cardPool, config.cardNumber);
+    for (let i = 0; i &lt; config.cardNumber; ++i) {
+        const divDom = document.createElement('div');
+        divDom.setAttribute('class', 'col3 card');
+        divDom.setAttribute('id', 'card' + ids[i].toString());
+        // divDom.setAttribute('onclick', 'select(' + ids[i].toString() + ', this)');
+        divDom.setAttribute('style', 'background-image: url("img/' + config.cards[ids[i]].filename + '")');
+        const pResponseDom = document.createElement('p');
+        pResponseDom.setAttribute('id', 'card' + ids[i].toString() + '-response');
+        divDom.appendChild(pResponseDom);
+        cardContainer.appendChild(divDom);
+
+        cardList[ids[i]] = divDom;
+    }
+};
+
+window.onload = () => {
+    insertCards();
+    cardList.forEach((card) => {
+        if (!(card === 0)) {
+            card.addEventListener('click', () => {
+                select(card.id.slice(4));
+            });
+        }
+    });
+    document.getElementById('submit-button').addEventListener('click', () => {
+        submit();
+    });
+    // console.log(cardList);
+};
+
+/**
+ * Event handler for selecting a card.
+ * 
+ * @param {string} id - The ID of the selected card.
+ */
+const select = (id) => {
+    if (reset) return;
+    // console.log(cardList[id]);
+    // console.log(selectedCards[id]);
+    if (selectedCards[id]) {
+        cardList[id].classList.remove('selected');
+        --totalSelected;
+    } else {
+        // console.log(totalSelected)
+        // console.log(parseInt(config.selectedLimit));
+        // console.log(totalSelected !== parseInt(config.selectedLimit));
+        if (totalSelected >= parseInt(config.selectedLimit)) return;
+        cardList[id].classList.add('selected');
+        ++totalSelected;
+    }
+    selectedCards[id] ^= 1;
+};
+
+/**
+ * Event handler for submitting selected cards.
+ */
+const submit = () => {
+    if (totalSelected !== parseInt(config.selectedLimit)) return;
+    if (reset) {
+        for (const i in cardList) {
+            if (!selectedCards[i]) continue;
+            cardList[i].style['background-image'] = 'url("img/' + config.cards[i].filename + '")';
+            cardList[i].children[0].innerHTML = '';
+            cardList[i].classList.remove('selected');
+            selectedCards[i] = 0;
+            --totalSelected;
+        }
+        document.getElementById('submit-button').innerHTML = 'submit';
+        reset = 0;
+        return;
+    }
+    // let promiseList = [];
+    const data = [];
+    const selectedID = [];
+    for (const i in cardList) {
+        if (!selectedCards[i]) continue;
+        cardList[i].style['background-image'] = null;
+        cardList[i].children[0].innerHTML = 'Animation...';
+        selectedID.push(i);
+        data.push(parseInt(i));
+        // promiseList.push(getRequest('https://team12.jyh.sb/mysticalmessage=' + config.cards[i].prompt));
+    }
+    const promiseList = [getAnswer(data)];
+    reset = 1;
+    Promise.all(promiseList).then(res => {
+        for (const index in selectedID) {
+            const i = parseInt(selectedID[index]);
+            cardList[i].style['background-image'] = 'url("img/' + config.cards[i].filename + '")';
+            cardList[i].children[0].innerHTML = res[0].answer;
+        }
+        document.getElementById('submit-button').innerHTML = 'reset';
+    });
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cardAnimation">cardAnimation</a></li><li><a href="global.html#getAnswer">getAnswer</a></li><li><a href="global.html#getAnswerLocal">getAnswerLocal</a></li><li><a href="global.html#getRank">getRank</a></li><li><a href="global.html#getRequest">getRequest</a></li><li><a href="global.html#getResponseFromAPI">getResponseFromAPI</a></li><li><a href="global.html#insertCards">insertCards</a></li><li><a href="global.html#insertCookies">insertCookies</a></li><li><a href="global.html#insertResults">insertResults</a></li><li><a href="global.html#landingSubmit">landingSubmit</a></li><li><a href="global.html#randomChoose">randomChoose</a></li><li><a href="global.html#select">select</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#submit">submit</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sat Jun 03 2023 01:24:45 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
