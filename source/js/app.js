@@ -7,16 +7,14 @@
  */
 export async function getResponseFromAPI(message, tarots) {
     console.log('message = ', message);
-    // Endpoint of the actual API
-    const endpoint = 'https://api.openai.com/v1/completions';
-
+    // Link to server to run to get the API key
+    const endpoint = 'http://localhost:3333/api';
     let answer;
     try {
         const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${process.env.API_KEY}` // Use API_KEY from environment variables
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 model: 'text-davinci-003',

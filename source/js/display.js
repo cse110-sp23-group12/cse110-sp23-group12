@@ -8,10 +8,10 @@ let totalSelected = 0;
 const message = localStorage.getItem('userMessage');
 console.log('message: ', message);
 const tarots = selectedCards.map(id => config.cards[id].name);
-const promiseList = [getResponseFromAPI(message, tarots)];
+// const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
-// const promiseList = [getAnswer(message, selectedCards)];
+const promiseList = [getAnswer(message, selectedCards)];
 
 /**
  * Inserts cookies into the cookie container.
@@ -113,12 +113,6 @@ const select = async (id) => {
 const show = () => {
     const block = document.getElementsByClassName('result-response')[0];
     Promise.all(animationPromise).then(async () => {
-        // const message = localStorage.getItem('userMessage');
-        // console.log(message);
-        // const tarots = selectedCards.map(id => config.cards[id].name);
-        // const promiseList = [getResponseFromAPI(message, tarots)];
-        // const promiseList = [getAnswer(message, selectedCards)];
-        // const fortune = await Promise.all(promiseList).then((responses) => responses[0].answer);
         setTimeout(() => {
             document.getElementById('display-document').classList.add('display-none');
             document.getElementById('display-document').classList.remove('display-document');
