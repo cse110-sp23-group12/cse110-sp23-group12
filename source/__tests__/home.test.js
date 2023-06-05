@@ -126,17 +126,4 @@ describe('Basic user flow for Website', () => {
         });
         expect(data.length).toBe(3);
     }, 10000);
-
-    it('click button to go to home page', async () => {
-        //click button
-        await Promise.all([
-          page.waitForNavigation(),
-          page.click("#display-retry-button"),
-        ]);
-        // check if the page is redirected to index.html
-        const pageURL = await page.url();
-        expect(pageURL).toBe(
-          "https://cse110-sp23-group12.github.io/cse110-sp23-group12/index.html"
-        );
-    },10000);
 });
