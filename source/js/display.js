@@ -5,14 +5,13 @@ const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 // const promiseList = [getAnswer(selectedCards)];
-// const message = localStorage.getItem('userMessage');
-// console.log('message: ', message);
-// const tarots = selectedCards.map(id => config.cards[id].name);
-// const promiseList = [getResponseFromAPI(message, tarots)];
+const message = localStorage.getItem('userMessage');
+console.log('message: ', message);
+const tarots = selectedCards.map(id => config.cards[id].name);
+const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
-const message = localStorage.getItem('userMessage');
-const promiseList = [getAnswer(message, selectedCards)];
+// const promiseList = [getAnswer(message, selectedCards)];
 
 /**
  * Inserts cookies into the cookie container.
