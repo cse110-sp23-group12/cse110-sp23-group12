@@ -28,7 +28,7 @@ export const getRequest = (data) => {
  */
 export const getAnswerAPI = async (message, data) => {
     console.log(message);
-    const API_KEY = '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';
+    const API_KEY = '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';
     return new Promise((resolve, reject) => {
         const apiResponse = fetch('https://api.openai.com/v1/completions', {
             method: 'POST',
