@@ -93,18 +93,37 @@ window.onload = () => {
  * @returns {Promise} A promise that resolves after the selection process.
  */
 const select = async (id) => {
-    if (!valid[id]) return;
-    valid[id] = 0;
-    const c = selectedCards[totalSelected];
-    if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
-    // cookieList[id].children[0].setAttribute('src', 'img/cookie0.svg');
-    const ck = document.getElementById(`cookie${id}`).children[0];
-    ck.classList.add('display-none');
+  if (!valid[id]) return;
+  valid[id] = 0;
+  const c = selectedCards[totalSelected];
+  if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
+  //remove the original cookie
+  cookieList[id].removeChild(cookieList[id].children[0]);
+  //create a new div for cracking cookie
+  const crackingCookie = document.createElement("div");
+  // set the class 
+  crackingCookie.setAttribute("class", "cracking-cookie");
+  // create img element for each part of the cracking cookie
+  const leftCookie = document.createElement("img");
+  const rightCookie = document.createElement("img");
+  const crackEffect = document.createElement("img");
+  leftCookie.setAttribute("src", "img/animationPic/cookie_left.png");
+  rightCookie.setAttribute("src", "img/animationPic/cookie_right.png");
+  crackEffect.setAttribute("src", "img/animationPic/crack.png");
+  leftCookie.setAttribute("class", "left-cookie");
+  rightCookie.setAttribute("class", "right-cookie");
+  crackEffect.setAttribute("class", "crack-effect");
+  // add both left and right cookie and crack-effect to cracking-cookie
+  crackingCookie.appendChild(leftCookie);
+  crackingCookie.appendChild(rightCookie);
+  crackingCookie.appendChild(crackEffect);
+  cookieList[id].appendChild(crackingCookie);
 
-    animationPromise.push(cardAnimation(c, totalSelected++));
-    if (totalSelected === config.selectedLimit) {
-        Promise.all(animationPromise).then(response => show());
-    }
+
+  animationPromise.push(cardAnimation(c, totalSelected++));
+  if (totalSelected === config.selectedLimit) {
+    Promise.all(animationPromise).then((response) => show());
+  }
 };
 
 /**

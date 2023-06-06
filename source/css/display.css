@@ -40,6 +40,34 @@ p {
     justify-content: center;
 }
 
+.left-cookie {
+    width: 99%;
+    height: 97%;
+    display: flex;
+    left: -57px;
+    position: relative;
+    transform: rotate(5deg);
+    top: -23px;
+     animation: crack-left 0.3s ease-in forwards;
+}
+
+.right-cookie {
+    width: 95%;
+    height: 83%;
+    display: flex;
+    position: relative;
+    top: -227px;
+    right: -46px;
+    transform: rotate(4deg);
+    animation: crack-right 0.3s ease-in forwards;
+}
+
+.crack-effect {
+    position: relative;
+    top: -63vh;
+    left: 18vh;
+}
+
 .display-cookie>img {
     max-width: 90%;
     max-height: 90%;
@@ -125,5 +153,35 @@ p {
 @keyframes move-card-2 {
     100% {
         transform: translate(-50%, 0) translateX(100%) translateY(80%) scale(0.6);
+    }
+}
+
+@keyframes crack-left {
+    0% {
+        transform: translateX(0) rotate(5deg);
+    }
+    /* 30%, 40% {
+		transform: translateX(-1em) rotate(-3deg);
+    }
+    70%, 80% {
+        transform: translateX(-1em) rotate(-8deg);
+    } */
+    to {
+        transform: translateX(-1em) rotate(-21deg);
+    }
+}
+
+@keyframes crack-right {
+     0% {
+        transform: translateX(0) rotate(4deg);
+    }
+    /* 30%, 40% {
+		transform: translateX(1em) rotate(12deg);
+    }
+    70%, 80% {
+        transform: translateX(2em) rotate(17deg);
+    } */
+    to {
+        transform: translateX(3em) rotate(32deg);
     }
 }
