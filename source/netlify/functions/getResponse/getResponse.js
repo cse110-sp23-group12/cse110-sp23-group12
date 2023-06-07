@@ -2,20 +2,20 @@ const fetch = require('node-fetch');
 const querystring = require('querystring');
 
 const handler = async function (event, context) {
-    if (!context.clientContext && !context.clientContext.identity) {
-        return {
-            statusCode: 500,
-            headers: headers,
-            body: JSON.stringify({
-                msg: 'No identity instance detected.'
-            })
-        };
-    }
     const headers = {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
     };
+    if (!context.clientContext && !context.clientContext.identity) {
+        return {
+            statusCode: 500,
+            headers: headers,
+            body: JSON.stringify({
+                msg: 'No identity instance detected'
+            })
+        };
+    }
     const ref = event.headers.referer || '';
     console.log(ref);
     if (!ref.includes('cse110-sp23-group12.github.io') && !ref.includes('cse110.jyh.com') && !ref.includes('localhost')) {
