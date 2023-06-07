@@ -57,6 +57,21 @@ export const getAnswerAPI = async (message, data) => {
     });
 };
 
+
+export const getAnswerNetlify = (data, message) => {
+    return new Promise((resolve, reject) => {
+        fetch('https://team12-fortune-cookie.netlify.app/.netlify/functions/getResponse?' + new URLSearchParams({
+            first: config.cards[data[0]].prompt,
+            second: config.cards[data[1]].prompt,
+            third: config.cards[data[2]].prompt,
+            message: message
+        }), { mode: 'cors' }
+        ).then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error));
+    });
+}
+
 /**
  * Retrieves an answer locally from the database.
  * If the local database version is outdated, it updates the database from a JSON file.
@@ -107,7 +122,7 @@ export const getAnswerLocal = async (data) => {
  * @returns {Promise<string>} A promise that resolves to the answer string.
  */
 export const getAnswer = (message, data) => {
-    return (typeof dbVersion === 'undefined') ? getAnswerAPI(message, data) : getAnswerLocal(data);
+    return (typeof dbVersion === 'undefined') ? getAnswerNetlify(data, message) : getAnswerLocal(data);
 };
 // export const getAnswer = async (data) => {
 //     const message = '';

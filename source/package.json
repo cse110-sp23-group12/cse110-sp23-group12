@@ -25,5 +25,8 @@
   "jest": {
     "preset": "jest-puppeteer",
     "verbose": true
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.11"
   }
 }
