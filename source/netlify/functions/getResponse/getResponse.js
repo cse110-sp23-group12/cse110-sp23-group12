@@ -5,6 +5,7 @@ const handler = async function (event, context) {
     if (!context.clientContext && !context.clientContext.identity) {
         return {
             statusCode: 500,
+            headers: headers,
             body: JSON.stringify({
                 msg: 'No identity instance detected.'
             })
@@ -16,10 +17,11 @@ const handler = async function (event, context) {
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
     };
     const ref = event.headers.referer || '';
+    console.log(ref);
     if (!ref.includes('cse110-sp23-group12.github.io') && !ref.includes('cse110.jyh.com') && !ref.includes('localhost')) {
         return {
             statusCode: 403,
-            headers,
+            headers: headers,
             body: JSON.stringify({ answer: 'Forbidden' })
         };
     }
@@ -53,12 +55,13 @@ const handler = async function (event, context) {
         const data = await response.json();
         return {
             statusCode: 200,
-            headers,
+            headers: headers,
             body: JSON.stringify({ answer: data.choices[0].text.trim() })
         };
     } catch (error) {
         return {
             statusCode: 500,
+            headers: headers,
             body: JSON.stringify({ answer: error.message })
         };
     }
