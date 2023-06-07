@@ -66,8 +66,9 @@ const cardAnimation = async (id, kth) => {
     const bigCard = document.createElement('img');
     bigCard.setAttribute('src', `img/${config.cards[id].filename}`);
     bigCard.setAttribute('class', 'big-card');
-    plate.appendChild(bigCard);
-
+     setTimeout(() => {
+       plate.appendChild(bigCard);
+     }, 100);
     setTimeout(() => {
         bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
@@ -97,8 +98,11 @@ const select = async (id) => {
   valid[id] = 0;
   const c = selectedCards[totalSelected];
   if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
-  //remove the original cookie
-  cookieList[id].removeChild(cookieList[id].children[0]);
+  //hide the original cookie 
+  const ck = document.getElementById(`cookie${id}`).children[0];
+  ck.classList.add("display-none");
+  // get the display-bakeware div
+  const displayBakeware = document.getElementById("display-bakeware");
   //create a new div for cracking cookie
   const crackingCookie = document.createElement("div");
   // set the class 
@@ -117,8 +121,13 @@ const select = async (id) => {
   crackingCookie.appendChild(leftCookie);
   crackingCookie.appendChild(rightCookie);
   crackingCookie.appendChild(crackEffect);
-  cookieList[id].appendChild(crackingCookie);
+    // add cracking-cookie to display-bakeware
+    displayBakeware.appendChild(crackingCookie);
 
+    setTimeout(() => {
+        //remove crackingcookie after 1s
+        displayBakeware.removeChild(crackingCookie);
+    },1000)
 
   animationPromise.push(cardAnimation(c, totalSelected++));
   if (totalSelected === config.selectedLimit) {
