@@ -57,7 +57,6 @@ export const getAnswerAPI = async (message, data) => {
     });
 };
 
-
 export const getAnswerNetlify = (data, message) => {
     return new Promise((resolve, reject) => {
         fetch('https://team12-fortune-cookie.netlify.app/.netlify/functions/getResponse?' + new URLSearchParams({
@@ -70,7 +69,7 @@ export const getAnswerNetlify = (data, message) => {
             .then(data => resolve(data))
             .catch(error => reject(error));
     });
-}
+};
 
 /**
  * Retrieves an answer locally from the database.

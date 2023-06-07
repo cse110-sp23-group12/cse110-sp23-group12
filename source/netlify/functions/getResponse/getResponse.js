@@ -1,14 +1,14 @@
-const fetch = require('node-fetch')
-const querystring = require('querystring')
+const fetch = require('node-fetch');
+const querystring = require('querystring');
 
 const handler = async function (event, context) {
     if (!context.clientContext && !context.clientContext.identity) {
         return {
             statusCode: 500,
             body: JSON.stringify({
-                msg: 'No identity instance detected.',
-            }),
-        }
+                msg: 'No identity instance detected.'
+            })
+        };
     }
     const headers = {
         'Access-Control-Allow-Origin': '*',
@@ -21,7 +21,7 @@ const handler = async function (event, context) {
             statusCode: 403,
             headers,
             body: JSON.stringify({ answer: 'Forbidden' })
-        }
+        };
     }
     const API_KEY = process.env.API_KEY;
     const endpoint = 'https://api.openai.com/v1/completions';
@@ -38,7 +38,7 @@ const handler = async function (event, context) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${API_KEY}`
+                Authorization: `Bearer ${API_KEY}`
             },
             body: JSON.stringify({
                 model: 'text-davinci-003',
@@ -55,13 +55,13 @@ const handler = async function (event, context) {
             statusCode: 200,
             headers,
             body: JSON.stringify({ answer: data.choices[0].text.trim() })
-        }
+        };
     } catch (error) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ answer: error.message }),
-        }
+            body: JSON.stringify({ answer: error.message })
+        };
     }
-}
+};
 
-module.exports = { handler }
+module.exports = { handler };
