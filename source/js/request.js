@@ -27,14 +27,14 @@ export const getRequest = (data) => {
  * @returns the fortune produced by GPT
  */
 export const getAnswerAPI = async (message, data) => {
-    console.log(message);
-    const API_KEY = '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';
+    const keyPromise = await fetch('https://team12-fortune-cookie.netlify.app/.netlify/functions/getOpenaiKey');
+    const key = (await keyPromise.json()).secret;
     return new Promise((resolve, reject) => {
         const apiResponse = fetch('https://api.openai.com/v1/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${API_KEY}`
+                Authorization: `Bearer ${key}`
             },
             body: JSON.stringify({
                 model: 'text-davinci-003',
@@ -54,6 +54,20 @@ export const getAnswerAPI = async (message, data) => {
         }).catch(err => {
             reject(err);
         });
+    });
+};
+
+export const getAnswerNetlify = (data, message) => {
+    return new Promise((resolve, reject) => {
+        fetch('https://team12-fortune-cookie.netlify.app/.netlify/functions/getResponse?' + new URLSearchParams({
+            first: config.cards[data[0]].prompt,
+            second: config.cards[data[1]].prompt,
+            third: config.cards[data[2]].prompt,
+            message: message
+        }), { mode: 'cors' }
+        ).then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error));
     });
 };
 
@@ -107,7 +121,7 @@ export const getAnswerLocal = async (data) => {
  * @returns {Promise<string>} A promise that resolves to the answer string.
  */
 export const getAnswer = (message, data) => {
-    return (typeof dbVersion === 'undefined') ? getAnswerAPI(message, data) : getAnswerLocal(data);
+    return (typeof dbVersion === 'undefined') ? getAnswerNetlify(data, message) : getAnswerLocal(data);
 };
 // export const getAnswer = async (data) => {
 //     const message = '';
