@@ -1,0 +1,11 @@
+.sound-toggle {
+    position: absolute;
+    left: 90%;
+    top: 10%;
+    font-size: 5vh;
+}
+
+.sound-toggle:hover {
+    cursor: pointer;
+    color: gray;
+}

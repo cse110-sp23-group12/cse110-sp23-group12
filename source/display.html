@@ -5,9 +5,12 @@
     <link rel="stylesheet" href="css/display.css">
     <link rel="stylesheet" href="css/response.css">
     <link rel="stylesheet" href="css/display-button.css">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Neue">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
     <script type="text/javascript" src="config/config.js"></script>
     <script type="module" src="js/request.js"></script>
     <script type="module" src="js/utils.js"></script>
@@ -15,6 +18,9 @@
     <link rel="icon" type="image/png" href="img/logo391.png">
 </head>
 <body>
+    <audio src="audio/clipped_music.mp3" id="audio" loop>
+        Your browser does not support the audio tag.
+    </audio>
     <div class="display-document" id="display-document">
         <div class="display-bakeware position-relative" id="display-bakeware">
         </div>
@@ -35,11 +41,14 @@
             <!-- <p class="result-response-title">Your Fortune:</p> -->
             <p class="result-response-title"></p>
             <p class="result-response-text" id="result-response-text"></p>
-            <div style="position: absolute; right:30px; bottom:25px">
+            <div style="position: absolute; right: 30px; top :25px">
                 <div class="display-button" id="display-retry-button"  onclick="location.href='index.html'">
                     <p>Retry!</p>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="sound-toggle" id="sound-toggle">
+        <i class="fas fa-volume-off"></i>
     </div>
 </body>

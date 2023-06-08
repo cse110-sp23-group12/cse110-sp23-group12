@@ -7,7 +7,7 @@ let totalSelected = 0;
 // const promiseList = [getAnswer(selectedCards)];
 const message = localStorage.getItem('userMessage');
 console.log('message: ', message);
-const tarots = selectedCards.map(id => config.cards[id].name);
+// const tarots = selectedCards.map(id => config.cards[id].name);
 // const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
@@ -66,9 +66,9 @@ const cardAnimation = async (id, kth) => {
     const bigCard = document.createElement('img');
     bigCard.setAttribute('src', `img/${config.cards[id].filename}`);
     bigCard.setAttribute('class', 'big-card');
-     setTimeout(() => {
-       plate.appendChild(bigCard);
-     }, 250);
+    setTimeout(() => {
+        plate.appendChild(bigCard);
+    }, 250);
     setTimeout(() => {
         bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
@@ -85,6 +85,19 @@ window.onload = () => {
             });
         }
     });
+    const soundToggle = document.getElementById('sound-toggle');
+    soundToggle.addEventListener('click', () => {
+        const icon = soundToggle.children[0];
+        if (icon.classList.contains('fa-volume-up')) {
+            icon.classList.remove('fa-volume-up');
+            icon.classList.add('fa-volume-off');
+            document.getElementById('audio').pause();
+        } else {
+            icon.classList.remove('fa-volume-off');
+            icon.classList.add('fa-volume-up');
+            document.getElementById('audio').play();
+        }
+    });
 };
 
 /**
@@ -94,45 +107,47 @@ window.onload = () => {
  * @returns {Promise} A promise that resolves after the selection process.
  */
 const select = async (id) => {
-  if (!valid[id]) return;
-  valid[id] = 0;
-  const c = selectedCards[totalSelected];
-  if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
-  //hide the original cookie 
-  const ck = document.getElementById(`cookie${id}`).children[0];
-  ck.classList.add("display-none");
-  // get the display-bakeware div
-  const displayBakeware = document.getElementById("display-bakeware");
-  //create a new div for cracking cookie
-  const crackingCookie = document.createElement("div");
-  // set the class 
-  crackingCookie.setAttribute("class", "cracking-cookie");
-  // create img element for each part of the cracking cookie
-  const leftCookie = document.createElement("img");
-  const rightCookie = document.createElement("img");
-  const crackEffect = document.createElement("img");
-  leftCookie.setAttribute("src", "img/animationPic/cookie_left.png");
-  rightCookie.setAttribute("src", "img/animationPic/cookie_right.png");
-  crackEffect.setAttribute("src", "img/animationPic/crack.png");
-  leftCookie.setAttribute("class", "left-cookie");
-  rightCookie.setAttribute("class", "right-cookie");
-  crackEffect.setAttribute("class", "crack-effect");
-  // add both left and right cookie and crack-effect to cracking-cookie
-  crackingCookie.appendChild(leftCookie);
-  crackingCookie.appendChild(rightCookie);
-  crackingCookie.appendChild(crackEffect);
+    if (!valid[id]) return;
+    const crackAudio = new Audio('audio/crack4.mp3');
+    crackAudio.play();
+    valid[id] = 0;
+    const c = selectedCards[totalSelected];
+    if (parseInt(totalSelected) === parseInt(config.selectedLimit)) return;
+    // hide the original cookie 
+    const ck = document.getElementById(`cookie${id}`).children[0];
+    ck.classList.add('display-none');
+    // get the display-bakeware div
+    const displayBakeware = document.getElementById('display-bakeware');
+    // create a new div for cracking cookie
+    const crackingCookie = document.createElement('div');
+    // set the class 
+    crackingCookie.setAttribute('class', 'cracking-cookie');
+    // create img element for each part of the cracking cookie
+    const leftCookie = document.createElement('img');
+    const rightCookie = document.createElement('img');
+    const crackEffect = document.createElement('img');
+    leftCookie.setAttribute('src', 'img/animationPic/cookie_left.png');
+    rightCookie.setAttribute('src', 'img/animationPic/cookie_right.png');
+    crackEffect.setAttribute('src', 'img/animationPic/crack.png');
+    leftCookie.setAttribute('class', 'left-cookie');
+    rightCookie.setAttribute('class', 'right-cookie');
+    crackEffect.setAttribute('class', 'crack-effect');
+    // add both left and right cookie and crack-effect to cracking-cookie
+    crackingCookie.appendChild(leftCookie);
+    crackingCookie.appendChild(rightCookie);
+    crackingCookie.appendChild(crackEffect);
     // add cracking-cookie to display-bakeware
     displayBakeware.appendChild(crackingCookie);
 
     setTimeout(() => {
-        //remove crackingcookie after 1s
+        // remove crackingcookie after 1s
         displayBakeware.removeChild(crackingCookie);
-    },1000)
+    }, 1000);
 
-  animationPromise.push(cardAnimation(c, totalSelected++));
-  if (totalSelected === config.selectedLimit) {
-    Promise.all(animationPromise).then((response) => show());
-  }
+    animationPromise.push(cardAnimation(c, totalSelected++));
+    if (totalSelected === config.selectedLimit) {
+        Promise.all(animationPromise).then((response) => show());
+    }
 };
 
 /**

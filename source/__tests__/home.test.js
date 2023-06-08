@@ -92,8 +92,9 @@ describe('Basic user flow for Website', () => {
       }
       const data = await page.evaluate(() => {
       // get all the big-card elements
-      return Array.from(document.querySelectorAll("#plate-container .big-card"));
+        return Array.from(document.querySelectorAll("#plate-container .big-card"));
       });
+      await data;
       //checks the correct amount in plate
       expect(data.length).toBe(upper - lower);
         
