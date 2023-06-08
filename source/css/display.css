@@ -43,23 +43,23 @@ p {
     position: relative;
 }
 .left-cookie {
-    width: 182%;
-    height: 185%;
+    width: 189%;
+    height: 195%;
     display: flex;
-    left: 199%;
+    left: 284%;
     position: absolute;
     transform: rotate(5deg);
-    top: -289%;
+    top: -290%;
      animation: crack-left 0.5s ease-in forwards;
 }
 
 .right-cookie {
-    width: 170%;
-    height: 162%;
+    width: 174%;
+    height: 172%;
     display: flex;
     position: absolute;
     top: -261%;
-    right: -340%;
+    right: -431%;
     transform: rotate(4deg);
     animation: crack-right 0.9s ease-in forwards;
 }
@@ -67,7 +67,7 @@ p {
 .crack-effect {
     position: relative;
     top: -300%;
-    left: 327%;
+    left: 422%;
 }
 
 .display-cookie>img {
