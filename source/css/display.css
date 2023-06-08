@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #c19267;
+    background: url('../img/background/display_background.jpg') no-repeat center center/cover;;
 }
 
 p {
@@ -20,7 +20,7 @@ p {
 }
 
 .display-bakeware {
-    width: 100%;
+    width: 59%;
     margin: auto;
     aspect-ratio: 677/348;
     overflow: hidden;
@@ -100,6 +100,11 @@ p {
     animation: loading-animation 2s linear infinite;
 }
 
+#plate-container {
+    display: flex;
+    justify-content: center;
+}
+
 @keyframes loading-animation {
     0% {
         background-position: 100% 0;
@@ -127,3 +132,4 @@ p {
         transform: translate(-50%, 0) translateX(100%) translateY(80%) scale(0.6);
     }
 }
+
