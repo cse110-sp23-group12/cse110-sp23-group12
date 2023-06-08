@@ -45,7 +45,7 @@ p {
 
 .landing-submit-button>p {
     font-family: 'Jolly Lodger', cursive;
-    color: #875426;
+    color: var(--color-quinary);
     font-size: 2vw;
     margin: auto;
     user-select: none;
@@ -90,20 +90,21 @@ p {
 .landing-submit-button {
     width: 6vw;
     height: 3vw;
-    border: 1px solid black;
-    background-color: #fcdea5;
+    border: 1px solid var(--color-quaternary);
+    background-color: var(--color-primary);
     display: flex;
     justify-content: center;
-    box-shadow: 0.3vw 0.3vw black;
+    border-radius: 1vw;
+    box-shadow: 3px 3px var(--color-quinary);
 }
 
 .landing-submit-button:hover {
     cursor: pointer;
-    box-shadow: 0.2vw 0.2vw #202040;
+    box-shadow: 2px 2px var(--color-tertiary);
 }
 
 .landing-submit-button:active {
-    box-shadow: 0.2vw 0.2vw #602040;
+    box-shadow: 2px 2px var(--color-secondary);
 }
 
 .absolute-border {
