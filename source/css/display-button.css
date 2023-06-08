@@ -10,20 +10,21 @@
 .display-button {
     width: 6vw;
     height: 3vw;
-    border: 1px solid black;
+    border: 1px solid #dda653;
     background-color: #fcdea5;
     display: flex;
     justify-content: center;
-    box-shadow: 0.3vw 0.3vw black;
+    box-shadow: 3px 3px #dda653;
+    border-radius: 1vw;
 }
 
 .display-button:hover {
     cursor: pointer;
-    box-shadow: 0.2vw 0.2vw #202040;
+    box-shadow: 2px 2px #a97d3b;
 }
 
 .display-button:active {
-    box-shadow: 0.2vw 0.2vw #602040;
+    box-shadow: 2px 2px #a97d3b;
 }
 
 
