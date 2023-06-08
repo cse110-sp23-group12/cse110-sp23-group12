@@ -68,6 +68,7 @@ p {
     position: relative;
     top: -243%;
     left: 219%;
+    animation : fade-out 0.6s ease-in forwards;
 }
 
 .display-cookie>img {
@@ -185,3 +186,11 @@ p {
     }
 }
 
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
