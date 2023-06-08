@@ -35,13 +35,6 @@ p {
     flex-direction: row;
 }
 
-.landing-title>p {
-    font-family: 'Jolly Lodger', cursive;
-    font-size: 1000%;
-    -webkit-text-stroke: 1px black;
-    text-shadow: 0.01em 0.05em 0.01em #000;
-}
-
 .landing-submit-button>p {
     font-family: 'Jolly Lodger', cursive;
     color: #875426;
@@ -177,7 +170,7 @@ p {
 	 display: flex;
 	 flex-direction: column;
 	 overflow: hidden;
-	 background: url(../img/background/loading_background2.jpg.png) no-repeat center center/cover;;
+	 background: url(../img/background/landing_background.jpg) no-repeat center/cover;;
 }
  .content {
 	 display: flex;
