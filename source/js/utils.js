@@ -46,3 +46,31 @@ export const getRank = (arr, n, m) => {
     for (let i = 0; i < m; ++i) rank -= comb(n - a[i] - 1, m - i);
     return rank - 1;
 };
+
+export function toggleSound(soundToggle) {
+    const icon = soundToggle.children[0];
+    if (icon.classList.contains('fa-volume-up')) {
+        icon.classList.remove('fa-volume-up');
+        icon.classList.add('fa-volume-off');
+        document.getElementById('audio').pause();
+        return false;
+    } else {
+        icon.classList.remove('fa-volume-off');
+        icon.classList.add('fa-volume-up');
+        document.getElementById('audio').play();
+        return true;
+    }
+}
+
+export function setSound(soundToggle, bool) {
+    const icon = soundToggle.children[0];
+    if (bool) {
+        icon.classList.remove('fa-volume-off');
+        icon.classList.add('fa-volume-up');
+        document.getElementById('audio').play();
+    } else {
+        icon.classList.remove('fa-volume-up');
+        icon.classList.add('fa-volume-off');
+        document.getElementById('audio').pause();
+    }
+}

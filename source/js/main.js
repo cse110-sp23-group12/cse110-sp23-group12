@@ -1,7 +1,11 @@
+import { toggleSound, setSound } from './utils.js';
+
 /**
  * Event handler for the window's onload event.
  */
 window.onload = () => {
+    const soundToggle = document.getElementById('sound-toggle');
+    setSound(soundToggle, localStorage.getItem('soundOn'));
     const button = document.getElementById('landing-submit-button');
     const textInput = document.getElementById('text-input');
     /**
@@ -21,18 +25,9 @@ window.onload = () => {
             landingSubmit();
         }
     });
-    const soundToggle = document.getElementById('sound-toggle');
+
     soundToggle.addEventListener('click', () => {
-        const icon = soundToggle.children[0];
-        if (icon.classList.contains('fa-volume-up')) {
-            icon.classList.remove('fa-volume-up');
-            icon.classList.add('fa-volume-off');
-            document.getElementById('audio').pause();
-        } else {
-            icon.classList.remove('fa-volume-off');
-            icon.classList.add('fa-volume-up');
-            document.getElementById('audio').play();
-        }
+        localStorage.setItem('soundOn', toggleSound(soundToggle));
     });
 };
 
