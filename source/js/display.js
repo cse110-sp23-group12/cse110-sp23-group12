@@ -1,6 +1,5 @@
 import { randomChoose } from './utils.js';
 import { getAnswer } from './request.js';
-import { getResponseFromAPI } from './app.js';
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;

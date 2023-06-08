@@ -1,5 +1,4 @@
 import { getRank } from './utils.js';
-import { getResponseFromAPI } from './app.js';
 
 /**
  * 
