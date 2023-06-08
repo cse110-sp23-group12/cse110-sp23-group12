@@ -39,6 +39,37 @@ p {
     display: flex;
     justify-content: center;
 }
+.cracking-cookie {
+    position: relative;
+}
+.left-cookie {
+    width: 126%;
+    height: 131%;
+    display: flex;
+    left: 153%;
+    position: absolute;
+    transform: rotate(5deg);
+    top: -221%;
+     animation: crack-left 0.6s ease-in forwards;
+}
+
+.right-cookie {
+    width: 117%;
+    height: 111%;
+    display: flex;
+    position: absolute;
+    top: -199%;
+    right: -219%;
+    transform: rotate(4deg);
+    animation: crack-right 0.6s ease-in forwards;
+}
+
+.crack-effect {
+    position: relative;
+    top: -243%;
+    left: 219%;
+    animation : fade-out 0.6s ease-in forwards;
+}
 
 .display-cookie>img {
     max-width: 90%;
@@ -82,8 +113,8 @@ p {
 
 .big-card {
     position: absolute;
-    height: 200%;
-    top: -220%;
+    height: 116%;
+    top: -296%;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 8px;
@@ -117,19 +148,49 @@ p {
 
 @keyframes move-card-0 {
     100% {
-        transform: translate(-50%, 0) translateX(-100%) translateY(80%) scale(0.6);
+        transform: translate(-100%, 0) translateX(-100%) translateY(212%) scale(1.3);
     }
 }
 
 @keyframes move-card-1 {
     100% {
-        transform: translate(-50%, 0) translateX(0%) translateY(80%) scale(0.6);
+        transform: translate(-50%, 0) translateX(0%) translateY(211%) scale(1.3);
     }
 }
 
 @keyframes move-card-2 {
     100% {
-        transform: translate(-50%, 0) translateX(100%) translateY(80%) scale(0.6);
+        transform: translate(-1%, 0) translateX(100%) translateY(211%) scale(1.3);
     }
 }
 
+@keyframes crack-left {
+    0% {
+        opacity: 1;
+        transform: translateX(0) rotate(5deg);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-3em) rotate(-21deg);
+    }
+}
+
+@keyframes crack-right {
+     0% {
+        opacity: 1;
+        transform: translateX(0) rotate(4deg);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(5em) rotate(32deg);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
