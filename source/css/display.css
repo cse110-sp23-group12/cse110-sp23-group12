@@ -50,7 +50,7 @@ p {
     position: absolute;
     transform: rotate(5deg);
     top: -221%;
-     animation: crack-left 0.5s ease-in forwards;
+     animation: crack-left 0.6s ease-in forwards;
 }
 
 .right-cookie {
@@ -61,7 +61,7 @@ p {
     top: -199%;
     right: -219%;
     transform: rotate(4deg);
-    animation: crack-right 0.9s ease-in forwards;
+    animation: crack-right 0.6s ease-in forwards;
 }
 
 .crack-effect {

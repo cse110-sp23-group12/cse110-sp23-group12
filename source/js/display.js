@@ -68,7 +68,7 @@ const cardAnimation = async (id, kth) => {
     bigCard.setAttribute('class', 'big-card');
      setTimeout(() => {
        plate.appendChild(bigCard);
-     }, 100);
+     }, 30);
     setTimeout(() => {
         bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
