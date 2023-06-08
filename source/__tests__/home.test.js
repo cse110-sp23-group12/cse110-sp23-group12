@@ -83,6 +83,7 @@ describe('Basic user flow for Website', () => {
       for(let i = lower; i < upper; ++i){
         //click cookies 
         await page.evaluate((index) => {
+            console.log('#cookie' + index.toString());
             document.querySelector('#cookie' + index.toString()).click(); 
           }, i);
           const imgselector = '#cookie' + i.toString() + ' .display-none';
@@ -92,9 +93,9 @@ describe('Basic user flow for Website', () => {
       }
       const data = await page.evaluate(() => {
       // get all the big-card elements
-        return Array.from(document.querySelectorAll("#plate-container .big-card"));
+        // return Array.from(document.querySelectorAll("#plate-container .big-card"));
+        return Array.from(document.querySelectorAll(".display-cookie .display-none"));
       });
-      await data;
       //checks the correct amount in plate
       expect(data.length).toBe(upper - lower);
         
@@ -122,7 +123,8 @@ describe('Basic user flow for Website', () => {
     it('check 3 cards are displayed and being added to the plate', async () => {
         const data = await page.evaluate(() => {
             // get all the big-card elements
-          return Array.from(document.querySelectorAll("#plate-container .big-card"));
+        //   return Array.from(document.querySelectorAll("#plate-container .big-card"));
+          return Array.from(document.querySelectorAll(".display-cookie .display-none"));
 
         });
         expect(data.length).toBe(3);
