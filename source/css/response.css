@@ -72,7 +72,6 @@ p {
 
 .card-description {
     padding: 0 1vw;
-    /* margin-top: 5%; */
 }
 
 @media (768px <= width <= 1715px) {
@@ -100,43 +99,52 @@ p {
         box-sizing: border-box;
         padding-top: 100px;
     }
+
     .logo-img {
         /* height: 30%; */
         display: none;
     }
+
     .result-cards {
         flex-direction: column;
         justify-content: flex-end;
         width: 98%;
     }
+
     .result-description, .result-response {
         width: 98%;
         height: auto;
         padding: 10px;
         margin: 0 auto;
     }
+
     .result-cards .result-description {
         margin-bottom: 10px;
     }
+
     .result-cards .result-description:last-child {
         margin-bottom: 0;
     }
+
     .card-description {
         font-size: 3.5vw;
         margin-top: 0;
     }
+
     .result-response-text {
         font-size: 4.5vw;
         padding-left: 0;
     }
+
     .card-title {
         margin-bottom: 10px;
     }
+
     .result-response {
         height: 100%;
-        margin-top: 50px;
-        margin: 30px auto 10px auto;
+        margin: 30px auto 10px;
     }
+
     .result-response-title {
         font-size: 10vw;
     }

@@ -54,13 +54,13 @@ const landingSubmit = () => {
         startVelocity: 30,
         particleCount: 100,
         scalar: 3,
-        shapes: ["image"],
+        shapes: ['image'],
         shapeOptions: {
             image: [{
-                src: "./img/logo.png",
+                src: './img/logo.png',
                 width: 32,
                 height: 32
-            }],
+            }]
         }
     });
 
@@ -75,21 +75,19 @@ const landingSubmit = () => {
         startVelocity: 30,
         particleCount: 100,
         scalar: 3,
-        shapes: ["image"],
+        shapes: ['image'],
         shapeOptions: {
             image: [{
-                src: "./img/logo.png",
+                src: './img/logo.png',
                 width: 32,
                 height: 32
             }]
         }
     });
-    
     setTimeout(() => {
         redirect();
     }, 1000);
-
-}
+};
 
 const redirect = () => {
     // window.location.href = `display${(typeof dbVersion === 'undefined') ? '' : '_local'}.html`;

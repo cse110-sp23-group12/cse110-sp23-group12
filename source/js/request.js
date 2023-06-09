@@ -67,7 +67,6 @@ export const getAnswerNetlify = (data, message) => {
         ).then(response => response.json())
             .then(data => resolve(data))
             .catch(error => reject(error));
-        // resolve({answer: "Your fortune is one of transformation, manifesting your will and ambition. The High Priestess stands for your intuition, guiding you to a new level of understanding and self-discovery. The Magician symbolizes the power of manifestation and the use of your inner resources to make your dreams come true. The Hierophant denotes wisdom, learning, and the guidance of a trusted teacher or mentor. May the wisdom of the tarot cards guide you to new heights!"})
     });
 };
 
