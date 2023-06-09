@@ -120,7 +120,8 @@ export const getAnswerLocal = async (data) => {
  * @returns {Promise<string>} A promise that resolves to the answer string.
  */
 export const getAnswer = (message, data) => {
-    return (typeof dbVersion === 'undefined') ? getAnswerNetlify(data, message) : getAnswerLocal(data);
+    const method = localStorage.getItem('method');
+    return (method === 'undefined' || method === 'local') ? getAnswerLocal(data) : getAnswerNetlify(data, message);
 };
 // export const getAnswer = async (data) => {
 //     const message = '';

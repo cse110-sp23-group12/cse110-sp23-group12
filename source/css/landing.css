@@ -129,6 +129,10 @@ input[type="text"]
 }
 
 @media (width <= 767px) {
+    .landing-document > div  {
+        flex-direction: column;
+    }
+
     .landing-image {
         width: 30vw;
         height: 30vw;

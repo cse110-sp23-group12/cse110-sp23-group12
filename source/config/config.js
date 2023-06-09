@@ -2,7 +2,7 @@
 const config = {
     pageName: 'fortune teller',
     localDelay: 500,
-    cardPool: 8,
+    cardPool: 6,
     cardNumber: 6,
     selectedLimit: 3,
     cards: [
