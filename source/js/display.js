@@ -176,7 +176,7 @@ const show = () => {
             loadResultPage();
         });
     });
-}
+};
 
 const loadResultPage = () => {
     const block = document.getElementsByClassName('result-response')[0];

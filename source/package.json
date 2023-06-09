@@ -27,6 +27,7 @@
     "verbose": true
   },
   "dependencies": {
+    "import-local": "^3.1.0",
     "node-fetch": "^2.6.11"
   }
 }
