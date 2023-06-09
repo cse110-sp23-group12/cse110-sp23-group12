@@ -43,6 +43,7 @@
     },
     "globals": {
         "config": true,
-        "dbVersion": true
+        "dbVersion": true,
+        "confetti": true
     }
 }
