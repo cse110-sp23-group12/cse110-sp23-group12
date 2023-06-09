@@ -67,7 +67,7 @@ const cardAnimation = async (id, kth) => {
     bigCard.setAttribute('class', 'big-card');
     setTimeout(() => {
         plate.appendChild(bigCard);
-    }, 250);
+    }, 0);
     setTimeout(() => {
         bigCard.setAttribute('style', `animation: move-card-${kth} 2s 1 forwards;`);
     }, 1000);
@@ -152,19 +152,45 @@ const select = async (id) => {
 /**
  * Displays the final fortune results.
  */
+
 const show = () => {
-    const block = document.getElementsByClassName('result-response')[0];
+    // Promise.all(animationPromise).then(async () => {
+    //     const submitButton = document.getElementById('display-submit-button');
+    //     submitButton.classList.remove('display-button-off');
+    //     submitButton.classList.add('display-button');
+    //     submitButton.addEventListener('click', () => {
+    //         loadResultPage();
+    //     });
+    // });
     Promise.all(animationPromise).then(async () => {
-        setTimeout(() => {
-            document.getElementById('display-document').classList.add('display-none');
-            document.getElementById('display-document').classList.remove('display-document');
-            document.getElementById('result-document').classList.remove('display-none');
-            document.getElementById('result-document').classList.add('result-document');
-        }, 500);
-        Promise.all(promiseList).then((responses) => {
-            block.classList.remove('loading-animation');
-            document.getElementsByClassName('result-response-title')[0].innerText = 'Your Fortune:';
-            document.getElementById('result-response-text').innerText = responses[0].answer;
+        const submitButton = document.getElementById('display-bakeware');
+        for (let i = 0; i < 6; ++i) {
+            submitButton.children[i].classList.add('display-none');
+        }
+        const buttonTitle = document.createElement('div');
+        submitButton.classList.add('big-submit-button');
+        buttonTitle.setAttribute('style', 'align-self: center;');
+        buttonTitle.innerHTML = 'Submit';
+        submitButton.appendChild(buttonTitle);
+        submitButton.addEventListener('click', () => {
+            loadResultPage();
         });
     });
+}
+
+const loadResultPage = () => {
+    const block = document.getElementsByClassName('result-response')[0];
+    // Promise.all(animationPromise).then(async () => {
+    setTimeout(() => {
+        document.getElementById('display-document').classList.add('display-none');
+        document.getElementById('display-document').classList.remove('display-document');
+        document.getElementById('result-document').classList.remove('display-none');
+        document.getElementById('result-document').classList.add('result-document');
+    }, 500);
+    Promise.all(promiseList).then((responses) => {
+        block.classList.remove('loading-animation');
+        document.getElementsByClassName('result-response-title')[0].innerText = 'Your Fortune:';
+        document.getElementById('result-response-text').innerText = responses[0].answer;
+    });
+    // });
 };
