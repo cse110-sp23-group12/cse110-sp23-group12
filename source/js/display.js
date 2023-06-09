@@ -97,6 +97,7 @@ window.onload = () => {
             document.getElementById('audio').play();
         }
     });
+    // loadResultPage();
 };
 
 /**
