@@ -41,6 +41,18 @@ const config = {
             prompt: 'magician',
             filename: 'tarot_card/magician.png',
             description: 'The Magician symbolizes creativity, resourcefulness, and power. It signifies the ability to manifest your goals and desires through determination, focus and understanding the balance of the universe.'
+        },
+        {
+            name: 'DEATH',
+            prompt: 'death',
+            filename: 'tarot_card/death.png',
+            description: 'Death signifies profound transformations, endings, and new beginnings. It invites us to let go of the old, surrender to the unknown, and embrace the transformative power of endings.'
+        },
+        {
+            name: 'THE LOVERS',
+            prompt: 'lovers',
+            filename: 'tarot_card/lovers.png',
+            description: 'The Lovers embodies the union of opposites, representing partnerships and harmonious integration. It highlights the power of love, connection, and conscious decision-making in our lives.'
         }
     ]
 };
