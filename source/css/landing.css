@@ -73,6 +73,7 @@ p {
 .landing-image {
     width: 15vw;
     height: 15vw;
+    opacity: 0.7;
 }
 
 .landing-text-editor>img {
@@ -260,7 +261,6 @@ p {
 		transform: translate(0, 0);
 	}
 }
-
 
 .context h1{
     text-align: center;
