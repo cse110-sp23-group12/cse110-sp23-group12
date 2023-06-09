@@ -137,6 +137,13 @@ p {
     justify-content: center;
 }
 
+.prompt {
+    font-family: "Titan One", cursive;
+    font-size: 2vw;
+    color: #ae733f;
+    text-align: center;
+}
+
 .display-plate {
     width: 65%;
 }
@@ -214,6 +221,14 @@ p {
 }
 
 @media (width <= 767px) and (width >= 468px) {
+    .prompt {
+        font-family: "Titan One", cursive;
+        font-size: 13px;
+        color: #ae733f;
+        position: absolute;
+        top: 11px;
+        left: 54px;
+    }
     .display-bakeware {
         padding: 5px 0 0;
         width: 98%;
@@ -260,6 +275,13 @@ p {
 }
 
 @media (width <= 467px) {
+    .prompt {
+        font-family: "Titan One", cursive;
+        font-size: 120%;
+        color: #ae733f;
+        position: absolute;
+        top: 9%;
+    }
     .display-bakeware {
         padding: 5px 0 0;
         width: 98%;
