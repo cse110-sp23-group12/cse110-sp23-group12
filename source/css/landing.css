@@ -78,6 +78,7 @@ p {
 
 .landing-text-editor>img {
     padding: 0.5vw;
+    height: 100%;
 }
 
 .landing-text-editor>input {

@@ -14,7 +14,7 @@
     user-select: none;
 }
 
-* {
+label>* {
     box-sizing: inherit;
     cursor: inherit;
     transition-duration: 0.2s;
