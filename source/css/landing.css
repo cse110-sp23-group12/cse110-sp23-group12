@@ -88,6 +88,17 @@ p {
     background-color: transparent;
 }
 
+#text-input::placeholder {
+    font-family: "Titan One", cursive;
+    opacity: 0.5;
+}
+
+input[type="text"]
+{
+    font-family: "Titan One", cursive;
+    color: #682806;
+}
+
 .landing-submit-button {
     width: 6vw;
     height: 3vw;
