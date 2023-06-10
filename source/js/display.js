@@ -1,4 +1,4 @@
-import { randomChoose } from './utils.js';
+import { randomChoose, toggleSound, setSound } from './utils.js';
 import { getAnswer } from './request.js';
 const selectedCards = randomChoose(config.cardPool, config.selectedLimit);
 const cookieList = Array(config.cardPool).fill(0);
@@ -11,6 +11,7 @@ console.log('message: ', message);
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
 const promiseList = [getAnswer(message, selectedCards)];
+const soundToggle = document.getElementById('sound-toggle');
 
 /**
  * Inserts cookies into the cookie container.
@@ -75,6 +76,8 @@ const cardAnimation = async (id, kth) => {
 };
 
 window.onload = () => {
+    console.log('sound status = ', localStorage.getItem('soundOn'));
+    setSound(soundToggle, localStorage.getItem('soundOn'));
     insertCookies();
     insertResults();
     cookieList.forEach((card) => {
@@ -84,18 +87,8 @@ window.onload = () => {
             });
         }
     });
-    const soundToggle = document.getElementById('sound-toggle');
     soundToggle.addEventListener('click', () => {
-        const icon = soundToggle.children[0];
-        if (icon.classList.contains('fa-volume-up')) {
-            icon.classList.remove('fa-volume-up');
-            icon.classList.add('fa-volume-off');
-            document.getElementById('audio').pause();
-        } else {
-            icon.classList.remove('fa-volume-off');
-            icon.classList.add('fa-volume-up');
-            document.getElementById('audio').play();
-        }
+        localStorage.setItem('soundOn', toggleSound(soundToggle));
     });
     // loadResultPage();
 };
@@ -170,8 +163,8 @@ const show = () => {
         }
         const buttonTitle = document.createElement('div');
         submitButton.classList.add('big-submit-button');
-        buttonTitle.setAttribute('style', 'align-self: center;');
-        buttonTitle.innerHTML = 'Submit';
+        buttonTitle.setAttribute('style', 'align-self: center; font-family: "Titan One", cursive; font-size: 4vw; color: #ae733f;');
+        buttonTitle.innerHTML = 'Reveal Fortune';
         submitButton.appendChild(buttonTitle);
         submitButton.addEventListener('click', () => {
             loadResultPage();

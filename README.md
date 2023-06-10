@@ -1,7 +1,10 @@
 # cse110-sp23-group12
-## fortune cookie
-[https://cse110-sp23-group12.github.io/cse110-sp23-group12/](https://cse110-sp23-group12.github.io/cse110-sp23-group12/)  
-[https://cse110-sp23-group12.github.io/cse110-sp23-group12/local.html](https://cse110-sp23-group12.github.io/cse110-sp23-group12/local.html)
+## Click Below for our Tarot Card Program
+[https://cse110-sp23-group12.github.io/cse110-sp23-group12/](https://cse110-sp23-group12.github.io/cse110-sp23-group12/) 
+
+[Fortune Cookies Tarot Card GitHub Repo](https://github.com/cse110-sp23-group12/cse110-sp23-group12/tree/main/source)
+
+[JSDocs](https://cse110-sp23-group12.github.io/cse110-sp23-group12/doc/index.html)
 
 ### Current Overview of our Repository:
 ```
@@ -18,12 +21,9 @@
 │   ├── img
 │   ├── index.html
 │   ├── js
-│   │   ├── app.js
-│   │   ├── backup.js
 │   │   ├── display.js
 │   │   ├── main.js
 │   │   ├── request.js
-│   │   ├── server.js
 │   │   └── utils.js
 │   └── proscons.md
 └── specs
