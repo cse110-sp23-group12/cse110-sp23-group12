@@ -4,6 +4,8 @@
 
 [Fortune Cookies Tarot Card GitHub Repo](https://github.com/cse110-sp23-group12/cse110-sp23-group12/tree/main/source)
 
+[JSDocs](https://cse110-sp23-group12.github.io/cse110-sp23-group12/doc/index.html)
+
 ### Current Overview of our Repository:
 ```
 ├── README.md
