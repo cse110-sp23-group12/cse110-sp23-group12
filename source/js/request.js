@@ -91,7 +91,8 @@ export const getAnswerLocal = async (data) => {
     }
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const key = getRank(data, config.cardPool, config.selectedLimit);
+            const method = localStorage.getItem('method');
+            const key = getRank(data, (method === 'gpt') ? config.cardPool : config.cardNumber, config.selectedLimit);
             const dbList = JSON.parse(localStorage.getItem(key.toString()));
             const dataList = [];
             for (let i = 0; i < dbList.length; ++i) {

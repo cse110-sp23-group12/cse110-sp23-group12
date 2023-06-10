@@ -1,7 +1,9 @@
 import { randomChoose, toggleSound, setSound } from './utils.js';
 import { getAnswer } from './request.js';
 const method = localStorage.getItem('method');
-const selectedCards = randomChoose((method === null || method === 'local') ? config.cardNumber : config.cardPool, config.selectedLimit);
+const selectedCards = randomChoose((method === 'gpt') ? config.cardPool : config.cardNumber, config.selectedLimit);
+console.log((method === 'gpt') ? config.cardPool : config.cardNumber);
+console.log(selectedCards);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
 // const promiseList = [getAnswer(selectedCards)];
