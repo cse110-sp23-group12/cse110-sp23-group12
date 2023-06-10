@@ -17,7 +17,8 @@ if (localStorage.getItem('version') !== dbVersion) {
 
 window.onload = () => {
     const soundToggle = document.getElementById('sound-toggle');
-    // setSound(soundToggle, localStorage.getItem('soundOn'));
+    setSound(soundToggle, localStorage.getItem('soundOn'));
+    console.log('sound status = ', localStorage.getItem('soundOn'));
     const button = document.getElementById('landing-submit-button');
     const textInput = document.getElementById('text-input');
     /**

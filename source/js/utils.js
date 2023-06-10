@@ -64,11 +64,14 @@ export function toggleSound(soundToggle) {
 
 export function setSound(soundToggle, bool) {
     const icon = soundToggle.children[0];
-    if (bool) {
+    console.log('bool = ', bool);
+    if (bool === true) {
+        console.log('sound on');
         icon.classList.remove('fa-volume-off');
         icon.classList.add('fa-volume-up');
         document.getElementById('audio').play();
     } else {
+        console.log('sound off');
         icon.classList.remove('fa-volume-up');
         icon.classList.add('fa-volume-off');
         document.getElementById('audio').pause();
