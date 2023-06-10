@@ -44,9 +44,9 @@ p {
 }
 
 .landing-submit-button>p {
-    font-family: 'Jolly Lodger', cursive;
+    font-family: "Titan One", cursive;
     color: var(--color-quinary);
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: auto;
     user-select: none;
 }
