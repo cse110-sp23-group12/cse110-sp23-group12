@@ -128,6 +128,14 @@ input[type="text"]
     background-color: #553939;
     z-index: -1;
 }
+.field > span, .selected, .options {
+    font-family: "Titan One", cursive;
+}
+
+.option {
+    font-family: "Titan One", cursive;
+    font-size: medium;
+}
 
 @media (width <= 767px) {
     .landing-document > div  {
