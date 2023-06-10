@@ -80,4 +80,12 @@ For more information regarding our CI/CD pipeline please see
 
 #### Example Workflow:
 
-Suppose 
+Suppose we are pushing some code. In commit history, you can see if an error has occurred if there is an orange x by the corrresponding failing push. It will look something like this:
+
+<img width="664" alt="image" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/99768694/9d24952f-cc55-4186-a328-0f6c142d7853">
+
+However, a successful push passing all tests will look like:
+<img width="667" alt="image" src="https://github.com/cse110-sp23-group12/cse110-sp23-group12/assets/99768694/060f3cc1-6482-477b-803d-006ddd795c91">
+
+In this pop-up in commit history, you can see which test has failed and from there, you can diagnose the issue.
+
