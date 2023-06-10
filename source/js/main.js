@@ -61,6 +61,8 @@ window.onload = () => {
  * Redirects to the appropriate page and stores the user's message in localStorage.
  */
 const landingSubmit = () => {
+    const soundToggle = document.getElementById('sound-toggle');
+    setSound(soundToggle, false);
     const input = document.getElementById('text-input');
     if (input.value === '') return;
     // console.log('message=====', localStorage.getItem('userMessage'));

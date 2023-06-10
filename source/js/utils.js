@@ -57,14 +57,10 @@ export const getRank = (arr, n, m) => {
 export function toggleSound(soundToggle) {
     const icon = soundToggle.children[0];
     if (icon.classList.contains('fa-volume-up')) {
-        icon.classList.remove('fa-volume-up');
-        icon.classList.add('fa-volume-off');
-        document.getElementById('audio').pause();
+        setSound(soundToggle, false);
         return false;
     } else {
-        icon.classList.remove('fa-volume-off');
-        icon.classList.add('fa-volume-up');
-        document.getElementById('audio').play();
+        setSound(soundToggle, true);
         return true;
     }
 }
@@ -73,17 +69,26 @@ export function toggleSound(soundToggle) {
  * Given the toggle and a boolean value, sets the sound and the image to on or off.
  * 
  * @param {*} soundToggle  - the sound toggle element
- * @param {*} bool - a boolean valu3 corresponding to whether the sound should be on or off
+ * @param {*} bool - a boolean value corresponding to whether the sound should be on or off
  */
 export function setSound(soundToggle, bool) {
     const icon = soundToggle.children[0];
-    if (bool === 'true') {
+    const audio = document.getElementById('audio');
+    const pauseTime = localStorage.getItem('pauseTime');
+
+    if (bool === 'true' || bool === true) { // string when from localStorage, bool when from toggleSound
         icon.classList.remove('fa-volume-off');
         icon.classList.add('fa-volume-up');
-        document.getElementById('audio').play();
+        // Set the time to where it was paused.
+        audio.currentTime = pauseTime;
+        audio.play();
     } else {
         icon.classList.remove('fa-volume-up');
         icon.classList.add('fa-volume-off');
-        document.getElementById('audio').pause();
+        // Save the current time when the audio is paused.
+        const newPauseTime = audio.currentTime;
+        audio.pause();
+        localStorage.setItem('pauseTime', newPauseTime);
+        console.log(newPauseTime);
     }
 }
