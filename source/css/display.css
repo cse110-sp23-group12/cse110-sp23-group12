@@ -117,7 +117,7 @@ p {
 .big-card {
     position: absolute;
     height: calc(min(1696px*0.59, 59vw) / 677 * 348);
-    bottom: calc((100vh - ((min(1696px, 65vw) / 842 * 169))) / 2);
+    bottom: calc(min(1696px, 65vw) / 842 * 169 / 2 + (90vh - min(1696px, 59vw) / 677 * 348) / 2);
     padding: 8px;
     background-color: white;
     border-radius: 8px;
@@ -140,7 +140,9 @@ p {
 .prompt {
     font-family: "Titan One", cursive;
     font-size: 2vw;
-    color: #ae733f;
+    height: 10vh;
+    -webkit-text-stroke: 1px black;
+    color: white;
     text-align: center;
 }
 
@@ -163,7 +165,8 @@ p {
         transform: 
             translate(-80%, 0)
             translateX(0)
-            translateY(calc((100vh - ((min(1696px, 65vw) / 842 * 169)))/2 + (min(1696*0.59px, 59vw) / 677 * 348 / 2 * 0.25))) scale(0.75);
+            translateY(calc(min(1696px, 65vw) / 842 * 169 / 2 + (90vh - min(1696px, 59vw) / 677 * 348) / 2 + min(1696px*0.59, 59vw) / 677 * 348 * 0.5 * 0.25))
+            scale(0.75);
     }
 }
 
@@ -172,7 +175,8 @@ p {
         transform: 
             translate(0, 0)
             translateX(0)
-            translateY(calc((100vh - ((min(1696px, 65vw) / 842 * 169)))/2 + (min(1696*0.59px, 59vw) / 677 * 348 / 2 * 0.25))) scale(0.75);
+            translateY(calc(min(1696px, 65vw) / 842 * 169 / 2 + (90vh - min(1696px, 59vw) / 677 * 348) / 2 + min(1696px*0.59, 59vw) / 677 * 348 * 0.5 * 0.25))
+            scale(0.75);
     }
 }
 
@@ -181,8 +185,8 @@ p {
         transform: 
             translate(80%, 0)
             translateX(0)
-            translateY(calc((100vh - ((min(1696px, 65vw) / 842 * 169)))/2 + (min(1696*0.59px, 59vw) / 677 * 348 / 2 * 0.25))) scale(0.75);
-
+            translateY(calc(min(1696px, 65vw) / 842 * 169 / 2 + (90vh - min(1696px, 59vw) / 677 * 348) / 2 + min(1696px*0.59, 59vw) / 677 * 348 * 0.5 * 0.25))
+            scale(0.75);
     }
 }
 
@@ -224,10 +228,8 @@ p {
     .prompt {
         font-family: "Titan One", cursive;
         font-size: 13px;
-        color: #ae733f;
         position: absolute;
-        top: 11px;
-        left: 54px;
+        left: 10vh;
     }
 
     .display-bakeware {
@@ -279,7 +281,6 @@ p {
     .prompt {
         font-family: "Titan One", cursive;
         font-size: 120%;
-        color: #ae733f;
         position: absolute;
         top: 9%;
     }
@@ -309,7 +310,7 @@ p {
             transform: 
                 translate(-65%, 0)
                 translateX(0)
-                translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 1px))
+                translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 2px))
                 scale(0.6);
         }
     }
@@ -319,7 +320,7 @@ p {
             transform: 
                 translate(0, 0)
                 translateX(0)
-                translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 1px))
+                translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 2px))
                 scale(0.6);
         }
     }
@@ -329,7 +330,7 @@ p {
             transform: 
                 translate(65%, 0)
                 translateX(0)
-                translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 1px))
+                translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 2px))
                 scale(0.6);
         }
     }

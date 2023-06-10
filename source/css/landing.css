@@ -128,6 +128,7 @@ input[type="text"]
     background-color: #553939;
     z-index: -1;
 }
+
 .field > span, .selected, .options {
     font-family: "Titan One", cursive;
 }
