@@ -18,12 +18,9 @@
 │   ├── img
 │   ├── index.html
 │   ├── js
-│   │   ├── app.js
-│   │   ├── backup.js
 │   │   ├── display.js
 │   │   ├── main.js
 │   │   ├── request.js
-│   │   ├── server.js
 │   │   └── utils.js
 │   └── proscons.md
 └── specs
