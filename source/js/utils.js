@@ -47,6 +47,13 @@ export const getRank = (arr, n, m) => {
     return rank - 1;
 };
 
+/**
+ * Toggles the sound item and turns the sound on or off.
+ * Used when the sound toggle is clicked.
+ * 
+ * @param {*} soundToggle - the sound toggle element
+ * @returns - a boolean value corresponding to whether the sound is on or off
+ */
 export function toggleSound(soundToggle) {
     const icon = soundToggle.children[0];
     if (icon.classList.contains('fa-volume-up')) {
@@ -62,6 +69,12 @@ export function toggleSound(soundToggle) {
     }
 }
 
+/**
+ * Given the toggle and a boolean value, sets the sound and the image to on or off.
+ * 
+ * @param {*} soundToggle  - the sound toggle element
+ * @param {*} bool - a boolean valu3 corresponding to whether the sound should be on or off
+ */
 export function setSound(soundToggle, bool) {
     const icon = soundToggle.children[0];
     console.log('bool = ', bool);
