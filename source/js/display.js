@@ -163,8 +163,8 @@ const show = () => {
         }
         const buttonTitle = document.createElement('div');
         submitButton.classList.add('big-submit-button');
-        buttonTitle.setAttribute('style', 'align-self: center;');
-        buttonTitle.innerHTML = 'Submit';
+        buttonTitle.setAttribute('style', 'align-self: center; font-family: "Titan One", cursive; font-size: 4vw; color: #ae733f;');
+        buttonTitle.innerHTML = 'Reveal Fortune';
         submitButton.appendChild(buttonTitle);
         submitButton.addEventListener('click', () => {
             loadResultPage();
