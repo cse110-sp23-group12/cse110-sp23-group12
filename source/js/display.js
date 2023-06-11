@@ -2,15 +2,9 @@ import { randomChoose, toggleSound, setSound } from './utils.js';
 import { getAnswer } from './request.js';
 const method = localStorage.getItem('method');
 const selectedCards = randomChoose((method === 'gpt') ? config.cardPool : config.cardNumber, config.selectedLimit);
-console.log((method === 'gpt') ? config.cardPool : config.cardNumber);
-console.log(selectedCards);
 const cookieList = Array(config.cardPool).fill(0);
 let totalSelected = 0;
-// const promiseList = [getAnswer(selectedCards)];
 const message = localStorage.getItem('userMessage');
-console.log('message: ', message);
-// const tarots = selectedCards.map(id => config.cards[id].name);
-// const promiseList = [getResponseFromAPI(message, tarots)];
 const valid = Array(config.cardPool).fill(1);
 const animationPromise = [];
 const promiseList = [getAnswer(message, selectedCards)];
@@ -88,7 +82,6 @@ window.onload = () => {
             retrySubmit();
         });
     });
-    console.log('sound status = ', localStorage.getItem('soundOn'));
     setSound(soundToggle, localStorage.getItem('soundOn'), true);
     insertCookies();
     insertResults();
@@ -102,7 +95,6 @@ window.onload = () => {
     soundToggle.addEventListener('click', () => {
         localStorage.setItem('soundOn', toggleSound(soundToggle));
     });
-    // loadResultPage();
 };
 
 /**
@@ -160,14 +152,6 @@ const select = async (id) => {
  */
 
 const show = () => {
-    // Promise.all(animationPromise).then(async () => {
-    //     const submitButton = document.getElementById('display-submit-button');
-    //     submitButton.classList.remove('display-button-off');
-    //     submitButton.classList.add('display-button');
-    //     submitButton.addEventListener('click', () => {
-    //         loadResultPage();
-    //     });
-    // });
     Promise.all(animationPromise).then(async () => {
         const submitButton = document.getElementById('display-bakeware');
         for (let i = 0; i < 6; ++i) {
@@ -186,7 +170,6 @@ const show = () => {
 
 const loadResultPage = () => {
     const block = document.getElementsByClassName('result-response')[0];
-    // Promise.all(animationPromise).then(async () => {
     setTimeout(() => {
         document.getElementById('display-document').classList.add('display-none');
         document.getElementById('display-document').classList.remove('display-document');
@@ -198,11 +181,9 @@ const loadResultPage = () => {
         document.getElementsByClassName('result-response-title')[0].innerText = 'Your Fortune:';
         document.getElementById('result-response-text').innerText = responses[0].answer;
     });
-    // });
 };
 
 const retrySubmit = () => {
-    console.log('button clicked');
     const soundToggle = document.getElementById('sound-toggle');
     setSound(soundToggle, false, false);
     setTimeout(() => {

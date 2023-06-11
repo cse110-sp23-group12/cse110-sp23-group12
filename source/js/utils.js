@@ -93,6 +93,5 @@ export function setSound(soundToggle, bool, changeIcon) {
         const newPauseTime = audio.currentTime;
         audio.pause();
         localStorage.setItem('pauseTime', newPauseTime);
-        console.log(newPauseTime);
     }
 }

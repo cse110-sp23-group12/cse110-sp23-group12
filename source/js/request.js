@@ -47,7 +47,6 @@ export const getAnswerAPI = async (message, data) => {
         });
         apiResponse.then(res => {
             res.json().then(json => {
-                console.log(json);
                 resolve({ answer: json.choices[0].text });
             });
         }).catch(err => {
@@ -110,10 +109,6 @@ export const getAnswerLocal = async (data) => {
     });
 };
 
-// export const getAnswer = (data) => {
-//     return (typeof dbVersion === 'undefined') ? getRequest(data) : getAnswerLocal(data);
-// };
-
 /**
  * Retrieves an answer either from the local database or from an API based on the availability of `dbVersion`.
  * 
@@ -124,10 +119,3 @@ export const getAnswer = (message, data) => {
     const method = localStorage.getItem('method');
     return (method === 'undefined' || method === 'local') ? getAnswerLocal(data) : getAnswerNetlify(data, message);
 };
-// export const getAnswer = async (data) => {
-//     const message = '';
-//     const tarots = data.map(id => config.cards[id].name);
-//     return await getResponseFromAPI(message, tarots);
-// };
-
-// module.exports = { getRequest, getAnswerLocal, getAnswer };

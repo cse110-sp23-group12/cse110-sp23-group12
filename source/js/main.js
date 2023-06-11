@@ -18,7 +18,6 @@ if (localStorage.getItem('version') !== dbVersion) {
 window.onload = () => {
     const soundToggle = document.getElementById('sound-toggle');
     setSound(soundToggle, localStorage.getItem('soundOn'), true);
-    console.log('sound status = ', localStorage.getItem('soundOn'));
     const button = document.getElementById('landing-submit-button');
     const textInput = document.getElementById('text-input');
     /**
@@ -65,9 +64,7 @@ const landingSubmit = () => {
     setSound(soundToggle, false, false);
     const input = document.getElementById('text-input');
     if (input.value === '') return;
-    // console.log('message=====', localStorage.getItem('userMessage'));
     localStorage.setItem('userMessage', input.value);
-    // console.log(localStorage.getItem('userMessage'));
 
     /** Confetti on the left side */
     confetti({
@@ -269,7 +266,6 @@ const form = {
                                     nestedNestedChild = nestedNestedChildren[iii];
                                     if (util.f.isElem(nestedNestedChild) && nestedNestedChild.tagName === 'LI') {
                                         size += util.f.getSize(nestedNestedChild, 'height');
-                                        //   console.log("size: " + size)
                                     }
                                 }
                                 util.f.addStyle(nestedChild, ['Height', 'Opacity'], [size + 'px', 1]);
