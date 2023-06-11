@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/utils.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/utils.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Randomly chooses k numbers from 0 to n-1 without replacement.
+ * 
+ * @param {number} n - The range of numbers to choose from (0 to n-1).
+ * @param {number} k - The number of numbers to choose.
+ * @returns {number[]} An array of k randomly chosen numbers.
+ */
+export const randomChoose = (n, k) => {
+    const num = [];
+    for (let i = 0; i &lt; n; ++i) num.push(i);
+    const result = [];
+    for (let i = 0; i &lt; k; ++i) {
+        const index = Math.floor(Math.random() * num.length);
+        result.push(num[index]);
+        num.splice(index, 1);
+    }
+    return result;
+};
+
+/**
+ * Calculates the binomial coefficient.
+ * 
+ * @param {number} n - The total number of objects.
+ * @param {number} k - The number of objects to choose.
+ * @returns {number} The binomial coefficient value.
+ */
+export const getRank = (arr, n, m) => {
+    const a = [];
+    for (let i = 0; i &lt; m; ++i) a.push(arr[i]);
+    a.sort((x, y) => { return x - y; });
+    const factorial = [1];
+    for (let i = 1; i &lt;= n; ++i) factorial.push(factorial[i - 1] * i);
+    /**
+     * Calculates the binomial coefficient.
+     * 
+     * @param {number} n - The total number of objects.
+     * @param {number} k - The number of objects to choose.
+     * @returns {number} The binomial coefficient value.
+     */
+    const comb = (n, k) => {
+        if (k === 0) return 1;
+        if (n === 0 || n &lt; k) return 0;
+        return factorial[n] / factorial[k] / factorial[n - k];
+    };
+    let rank = comb(n, m);
+    for (let i = 0; i &lt; m; ++i) rank -= comb(n - a[i] - 1, m - i);
+    return rank - 1;
+};
+
+/**
+ * Toggles the sound item and turns the sound on or off.
+ * Used when the sound toggle is clicked, uses setSound as a helper function.
+ * 
+ * @param {*} soundToggle - the sound toggle element
+ * @returns - a boolean value corresponding to whether the sound is on or off
+ */
+export function toggleSound(soundToggle) {
+    const icon = soundToggle.children[0];
+    if (icon.classList.contains('fa-volume-up')) {
+        setSound(soundToggle, false, true);
+        return false;
+    } else {
+        setSound(soundToggle, true, true);
+        return true;
+    }
+}
+
+/**
+ * Given the toggle and a boolean value, sets the sound and the image to on or off.
+ * 
+ * @param {*} soundToggle  - the sound toggle element
+ * @param {*} bool - a boolean value corresponding to whether the sound should be on or off
+ * @param {*} changeIcon - a boolean value for niche cases in which you want to set the sound without changing the icon
+ */
+export function setSound(soundToggle, bool, changeIcon) {
+    const icon = soundToggle.children[0];
+    const audio = document.getElementById('audio');
+    const pauseTime = localStorage.getItem('pauseTime');
+
+    if (bool === 'true' || bool === true) { // string when from localStorage, bool when from toggleSound
+        if (changeIcon) {
+            icon.classList.remove('fa-volume-off');
+            icon.classList.add('fa-volume-up');
+        }
+        // Set the time to where it was paused.
+        audio.currentTime = pauseTime;
+        audio.play();
+    } else {
+        if (changeIcon) {
+            icon.classList.remove('fa-volume-up');
+            icon.classList.add('fa-volume-off');
+        }
+        // Save the current time when the audio is paused.
+        const newPauseTime = audio.currentTime;
+        audio.pause();
+        localStorage.setItem('pauseTime', newPauseTime);
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="form.html">form</a></li><li><a href="form.f.html">f</a></li><li><a href="form.f.init.html">init</a></li><li><a href="form.f.select.html">select</a></li><li><a href="util.html">util</a></li><li><a href="util.f.html">f</a></li><li><a href="util.f.events.html">events</a></li></ul><h3>Global</h3><ul><li><a href="global.html#cardAnimation">cardAnimation</a></li><li><a href="global.html#cookieAnimationDone">cookieAnimationDone</a></li><li><a href="global.html#cookieSelect">cookieSelect</a></li><li><a href="global.html#getAnswer">getAnswer</a></li><li><a href="global.html#getAnswerAPI">getAnswerAPI</a></li><li><a href="global.html#getAnswerLocal">getAnswerLocal</a></li><li><a href="global.html#getRank">getRank</a></li><li><a href="global.html#getRequest">getRequest</a></li><li><a href="global.html#handler">handler</a></li><li><a href="global.html#insertCookies">insertCookies</a></li><li><a href="global.html#insertResults">insertResults</a></li><li><a href="global.html#landingSubmit">landingSubmit</a></li><li><a href="global.html#randomChoose">randomChoose</a></li><li><a href="global.html#setSound">setSound</a></li><li><a href="global.html#toggleSound">toggleSound</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Jun 11 2023 03:43:47 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
