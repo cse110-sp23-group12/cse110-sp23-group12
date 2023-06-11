@@ -5,7 +5,7 @@
 export const util = {
     /** 
      * Collection of utility functions.
-     * @namespace f
+     * @namespace util.f
      */
     f: {
         /**
@@ -162,7 +162,7 @@ export const util = {
 export const form = {
     /** 
      * Collection of form-related functions.
-     * @namespace f
+     * @namespace form.f
      */
     f: {
         /**
