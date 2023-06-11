@@ -49,7 +49,7 @@ export const getRank = (arr, n, m) => {
 
 /**
  * Toggles the sound item and turns the sound on or off.
- * Used when the sound toggle is clicked.
+ * Used when the sound toggle is clicked, uses setSound as a helper function.
  * 
  * @param {*} soundToggle - the sound toggle element
  * @returns - a boolean value corresponding to whether the sound is on or off
@@ -70,6 +70,7 @@ export function toggleSound(soundToggle) {
  * 
  * @param {*} soundToggle  - the sound toggle element
  * @param {*} bool - a boolean value corresponding to whether the sound should be on or off
+ * @param {*} changeIcon - a boolean value for niche cases in which you want to set the sound without changing the icon
  */
 export function setSound(soundToggle, bool, changeIcon) {
     const icon = soundToggle.children[0];
