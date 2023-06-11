@@ -79,7 +79,7 @@ describe("check all the components works on landing page", () => {
 
   it("Change to local version", async () => {
         await page.evaluate(() => {
-            const ulElement = document.querySelector("#img_category_options");
+            const ulElement = document.querySelector("#img-category-options");
             const liElements = Array.from(ulElement.querySelectorAll("li"));
             const secondLiElement = liElements[1];
             secondLiElement.click();
@@ -92,7 +92,7 @@ describe("check all the components works on landing page", () => {
 
   it("Change to chatPGT version", async () => {
     await page.evaluate(() => {
-      const ulElement = document.querySelector("#img_category_options");
+      const ulElement = document.querySelector("#img-category-options");
       const liElements = Array.from(ulElement.querySelectorAll("li"));
       const secondLiElement = liElements[0];
       secondLiElement.click();

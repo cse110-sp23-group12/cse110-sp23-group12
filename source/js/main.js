@@ -47,12 +47,12 @@ window.onload = () => {
 
     if (localStorage.getItem('method') === null) {
         localStorage.setItem('method', 'gpt');
-        document.getElementById('img_category').click();
-        document.getElementById('img_category_options').children[0].click();
+        document.getElementById('img-category').click();
+        document.getElementById('img-category-options').children[0].click();
     } else {
         const method = localStorage.getItem('method') === 'gpt' ? 0 : 1;
-        document.getElementById('img_category').click();
-        document.getElementById('img_category_options').children[method].click();
+        document.getElementById('img-category').click();
+        document.getElementById('img-category-options').children[method].click();
     }
 };
 

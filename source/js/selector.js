@@ -1,19 +1,22 @@
 /** 
  * Utility module
- * @module util
+ * @namespace
  */
 export const util = {
     /** 
      * Collection of utility functions.
-     * @namespace util.f
+     * @namespace
+     * @alias util.f
+     * @memberof util
+     * @type {object}
      */
     f: {
         /**
          * Adds style to an element.
-         * @param {string|Object} elem - The element or its id.
-         * @param {string|Array} prop - The style property or an array of properties to be added.
-         * @param {string|Array} val - The value of the style or an array of values to be added.
-         * @param {string|Array} vendors - Vendor prefixes for CSS properties.
+         * @param {Object} elem - The element or its id.
+         * @param {Array} prop - The style property or an array of properties to be added.
+         * @param {Array} val - The value of the style or an array of values to be added.
+         * @param {String} vendors - Vendor prefixes for CSS properties.
          */
         addStyle: function (elem, prop, val, vendors) {
             let i, ii, property, value;
@@ -42,7 +45,10 @@ export const util = {
 
         /**
          * Event handler for when a CSS is loaded.
+         * 
          * @param {Object} event - The event object.
+         * 
+         * @method
          */
         cssLoaded: function (event) {
             const child = util.f.getTrg(event);
@@ -51,7 +57,10 @@ export const util = {
 
         /**
          * Event related functions.
-         * @namespace events
+         * @namespace
+         * @alias util.f.events
+         * @memberof util.f
+         * @type {object}
          */
         events: {
             /**
@@ -157,21 +166,31 @@ export const util = {
 
 /** 
  * Form module
- * @module form
+ * @namespace
+ * @alias form
  */
 export const form = {
     /** 
      * Collection of form-related functions.
-     * @namespace form.f
+     * @namespace
+     * @alias form.f
+     * @name form.f
+     * @memberof form
+     * @type {object}
      */
     f: {
         /**
          * Initializes the form.
-         * @namespace init
+         * @namespace
+         * @alias form.f.init
+         * @memberof form.f
+         * @type {object}
          */
         init: {
             /**
              * Registers the form elements.
+             * @method register
+             * @memberof form.f.init
              */
             register: function () {
                 let child; let children = document.getElementsByClassName('field'); let i;
@@ -188,6 +207,7 @@ export const form = {
 
             /**
              * Unregisters the form elements.
+             * @mtehod
              */
             unregister: function () {
                 // just here as a formallity
@@ -196,7 +216,10 @@ export const form = {
         },
         /**
          * Collection of selection-related functions.
-         * @namespace select
+         * @namespace
+         * @alias form.f.select
+         * @memberof form.f
+         * @type {object}
          */
         select: {
             /**

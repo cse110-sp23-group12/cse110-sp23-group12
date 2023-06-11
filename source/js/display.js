@@ -88,7 +88,7 @@ window.onload = () => {
     cookieList.forEach((card) => {
         if (!(card === 0)) {
             card.addEventListener('click', () => {
-                select(card.id.slice(6));
+                cookieSelect(card.id.slice(6));
             });
         }
     });
@@ -103,7 +103,7 @@ window.onload = () => {
  * @param {string} id - The ID of the selected cookie.
  * @returns {Promise} A promise that resolves after the selection process.
  */
-const select = async (id) => {
+const cookieSelect = async (id) => {
     if (!valid[id]) return;
     const crackAudio = new Audio('audio/crack4.mp3');
     crackAudio.play();
@@ -143,7 +143,7 @@ const select = async (id) => {
 
     animationPromise.push(cardAnimation(c, totalSelected++));
     if (totalSelected === config.selectedLimit) {
-        Promise.all(animationPromise).then((response) => show());
+        Promise.all(animationPromise).then((response) => cookieAnimationDone());
     }
 };
 
@@ -151,7 +151,7 @@ const select = async (id) => {
  * Displays the final fortune results.
  */
 
-const show = () => {
+const cookieAnimationDone = () => {
     Promise.all(animationPromise).then(async () => {
         const submitButton = document.getElementById('display-bakeware');
         for (let i = 0; i < 6; ++i) {
