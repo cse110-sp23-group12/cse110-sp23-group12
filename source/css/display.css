@@ -229,7 +229,10 @@ p {
         font-family: "Titan One", cursive;
         font-size: 13px;
         position: absolute;
-        left: 10vh;
+        /* left: 10vh; */
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .display-bakeware {
@@ -279,10 +282,12 @@ p {
 
 @media (width <= 467px) {
     .prompt {
+        font-size: 100%;
         font-family: "Titan One", cursive;
-        font-size: 120%;
         position: absolute;
-        top: 9%;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .display-bakeware {
@@ -333,5 +338,17 @@ p {
                 translateY(calc((100vh - (98vw / 688 * 138) - (98vw / 668 * 510)) / 2 + (98vw / 688 * 138) + (98vw / 668 * 510 / 2 * 0.4) - 2px))
                 scale(0.6);
         }
+    }
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+    .prompt {
+        display: none;
+    }
+}
+
+@media screen and (min-aspect-ratio: 9/16) and (width <= 468px) {
+    .prompt {
+        display: none;
     }
 }
