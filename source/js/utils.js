@@ -57,10 +57,10 @@ export const getRank = (arr, n, m) => {
 export function toggleSound(soundToggle) {
     const icon = soundToggle.children[0];
     if (icon.classList.contains('fa-volume-up')) {
-        setSound(soundToggle, false);
+        setSound(soundToggle, false, true);
         return false;
     } else {
-        setSound(soundToggle, true);
+        setSound(soundToggle, true, true);
         return true;
     }
 }
@@ -71,20 +71,24 @@ export function toggleSound(soundToggle) {
  * @param {*} soundToggle  - the sound toggle element
  * @param {*} bool - a boolean value corresponding to whether the sound should be on or off
  */
-export function setSound(soundToggle, bool) {
+export function setSound(soundToggle, bool, changeIcon) {
     const icon = soundToggle.children[0];
     const audio = document.getElementById('audio');
     const pauseTime = localStorage.getItem('pauseTime');
 
     if (bool === 'true' || bool === true) { // string when from localStorage, bool when from toggleSound
-        icon.classList.remove('fa-volume-off');
-        icon.classList.add('fa-volume-up');
+        if (changeIcon) {
+            icon.classList.remove('fa-volume-off');
+            icon.classList.add('fa-volume-up');
+        }
         // Set the time to where it was paused.
         audio.currentTime = pauseTime;
         audio.play();
     } else {
-        icon.classList.remove('fa-volume-up');
-        icon.classList.add('fa-volume-off');
+        if (changeIcon) {
+            icon.classList.remove('fa-volume-up');
+            icon.classList.add('fa-volume-off');
+        }
         // Save the current time when the audio is paused.
         const newPauseTime = audio.currentTime;
         audio.pause();

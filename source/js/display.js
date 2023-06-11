@@ -79,8 +79,17 @@ const cardAnimation = async (id, kth) => {
 };
 
 window.onload = () => {
+    // should really use a class not ids but the retry button is also same class for css purposes
+    const buttons = document.querySelectorAll('#display-retry-button');
+
+    buttons.forEach(button => {
+        // Event handler for the click event on the retry button
+        button.addEventListener('click', () => {
+            retrySubmit();
+        });
+    });
     console.log('sound status = ', localStorage.getItem('soundOn'));
-    setSound(soundToggle, localStorage.getItem('soundOn'));
+    setSound(soundToggle, localStorage.getItem('soundOn'), true);
     insertCookies();
     insertResults();
     cookieList.forEach((card) => {
@@ -190,4 +199,16 @@ const loadResultPage = () => {
         document.getElementById('result-response-text').innerText = responses[0].answer;
     });
     // });
+};
+
+const retrySubmit = () => {
+    console.log('button clicked');
+    const soundToggle = document.getElementById('sound-toggle');
+    setSound(soundToggle, false, false);
+    setTimeout(() => {
+        redirect();
+    }, 500);
+};
+const redirect = () => {
+    window.location.href = 'index.html';
 };
