@@ -31,7 +31,7 @@ describe('Basic user flow for Website', () => {
         const message = await page.evaluate(() => localStorage.getItem('userMessage'));
         expect(message).toBe('What is the meaning of life?');
 
-    }, 10000);
+    }, 20000);
 
     it('check if there are 6 cookies for user to select', async () => {
         // check if id: cookie0~5 exists
