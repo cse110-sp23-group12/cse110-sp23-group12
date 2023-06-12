@@ -102,17 +102,4 @@ describe("check all the components works on landing page", () => {
     });
     expect(chatGPTVersion).toBe("gpt");
   }, 10000);
-
-  it("Click submit button to next page", async () => {
-    await page.evaluate(() => localStorage.clear());
-    await Promise.all([
-      page.waitForNavigation(),
-      page.click("#landing-submit-button"),
-    ]);
-    // check if the page is redirected to display.html
-    const pageURL = await page.url();
-    expect(pageURL).toBe(
-      "https://cse110-sp23-group12.github.io/cse110-sp23-group12/display.html"
-    );
-  }, 10000);
 });

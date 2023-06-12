@@ -45,24 +45,12 @@ describe('Basic user flow for Website', () => {
         const cookie7 = await page.$("#cookie7");
         const set = new Set([cookie0, cookie1, cookie2, cookie3, cookie4, cookie5, cookie6, cookie7]);
         expect(set.size).toBe(7);
-        // expect(cookie0).toBeTruthy();
-        // expect(cookie1).toBeTruthy();
-        // expect(cookie2).toBeTruthy();
-        // expect(cookie3).toBeTruthy();
-        // expect(cookie4).toBeTruthy();
-        // expect(cookie5).toBeTruthy();
-        // // cookie6 should not exist so it should be falsy
-        // expect(cookie6).toBeFalsy();
     }, 10000);
 
     it('shows only 6 cookies for select', async () => {
       const num_cookie = 8;
       const limit = 12;
-      //check cookies id 0-5 exist
-    //   for(let i = 0; i < num_cookie; ++i){
-    //     const cookies = await page.$('#cookie'+ i.toString());
-    //     expect(cookies).toBeTruthy();
-    //   }
+
       // checks no more than 6 cookies
       for(let i = num_cookie; i < limit; ++i){
         const cookies = await page.$('#cookie'+ i.toString());
@@ -81,7 +69,6 @@ describe('Basic user flow for Website', () => {
       if(upper - lower > 3){
           upper = Math.ceil(upper/2);
       }
-      var cnt = 0;
       for(let i = lower; i < upper; ++i){
         //click cookies 
         var dom = await page.$$('#cookie' + i.toString());
@@ -102,10 +89,7 @@ describe('Basic user flow for Website', () => {
       const data = await page.evaluate(() => {
       // get all the big-card elements
         return Array.from(document.querySelectorAll("#plate-container .big-card"));
-        // return Array.from(document.querySelectorAll(".display-cookie .display-none"));
       });
-      //checks the correct amount in plate
-    //   expect(data.length).toBe(cnt);
         
     }, 10000);
 
@@ -131,8 +115,6 @@ describe('Basic user flow for Website', () => {
         const data = await page.evaluate(() => {
             // get all the big-card elements
           return Array.from(document.querySelectorAll("#plate-container .big-card"));
-        //   return Array.from(document.querySelectorAll(".display-cookie .display-none"));
-
         });
         expect(data.length).toBeLessThan(4);
     }, 10000);
