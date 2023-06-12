@@ -159,7 +159,7 @@ const cookieAnimationDone = () => {
         }
         const buttonTitle = document.createElement('div');
         submitButton.classList.add('big-submit-button');
-        buttonTitle.setAttribute('style', 'align-self: center; font-family: "Titan One", cursive; font-size: 4vw; color: #ae733f;');
+        buttonTitle.setAttribute('style', 'align-self: center; font-family: "Titan One", cursive; font-size: 4vw; color: #ae733f; text-align: center;');
         buttonTitle.innerHTML = 'Reveal Fortune';
         submitButton.appendChild(buttonTitle);
         submitButton.addEventListener('click', () => {
