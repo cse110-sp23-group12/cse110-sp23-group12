@@ -1,5 +1,5 @@
 # run unit tests
-name: Unit test
+name: Unit test & e2e test
 
 # triggered main pushed/pulled
 on: 
@@ -34,7 +34,7 @@ jobs:
         # run: npm run docs
       
       # Execute unit tests
-      - name: Unit Test
+      - name: Test
         # run: npm test ./__tests__/sum.test.js
         run: |
             cd source
