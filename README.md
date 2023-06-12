@@ -8,25 +8,78 @@
 
 ### Current Overview of our Repository:
 ```
-├── README.md
 ├── admin
+├── README.md
 ├── source
-│   ├── README.md
-│   ├── __tests__
+│   ├── audio
+│   │   ├── clipped_music.mp3
+│   │   ├── crack4.mp3
+│   │   └── full_music.mp3
+│   ├── babel.config.js
 │   ├── config
+│   │   ├── config.js
+│   │   ├── db_back.json
+│   │   ├── db.json
+│   │   ├── gen.py
+│   │   ├── online.js
+│   │   └── version.js
 │   ├── css
+│   │   ├── display-button.css
+│   │   ├── display.css
+│   │   ├── global.css
+│   │   ├── landing.css
+│   │   ├── response.css
+│   │   ├── selector.css
+│   │   └── style.css
 │   ├── display.html
-│   ├── display_local.html
 │   ├── doc
 │   ├── img
+│   │   ├── animationPic
+│   │   │   ├── 2.png
+│   │   │   ├── cookie_left.png
+│   │   │   ├── cookie_right.png
+│   │   │   ├── cracking.png
+│   │   │   └── crack.png
+│   │   ├── background
+│   │   │   ├── display_background.jpg
+│   │   │   └── landing_background.jpg
+│   │   ├── cookie0.svg
+│   │   ├── cookie1.svg
+│   │   ├── landing.svg
+│   │   ├── logo391.png
+│   │   ├── logo512.png
+│   │   ├── logo.png
+│   │   ├── plate.svg
+│   │   └── tarot_card
+│   │       ├── death.png
+│   │       ├── emperor.png
+│   │       ├── empress.png
+│   │       ├── fool.png
+│   │       ├── hierophant.png
+│   │       ├── high_priestess.png
+│   │       ├── lovers.png
+│   │       └── magician.png
 │   ├── index.html
 │   ├── js
 │   │   ├── display.js
 │   │   ├── main.js
 │   │   ├── request.js
+│   │   ├── selector.js
 │   │   └── utils.js
-│   └── proscons.md
-└── specs
+│   ├── jsdoc.json
+│   ├── netlify
+│   │   └── functions
+│   │       └── getResponse
+│   │           └── getResponse.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── __tests__
+│       ├── getrank.test.js
+│       ├── home.test.js
+│       ├── landingPage.test.js
+│       └── randomChoose.test.js
+├── specs
 ```
 
 ## About Us:
