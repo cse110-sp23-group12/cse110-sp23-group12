@@ -1,6 +1,6 @@
 # cse110-sp23-group12
 ## Click Below for our Tarot Card Program
-[https://cse110-sp23-group12.github.io/cse110-sp23-group12/](https://cse110-sp23-group12.github.io/cse110-sp23-group12/) 
+[https://cse110-sp23-group12.github.io/cse110-sp23-group12/](https://cse110-sp23-group12.github.io/cse110-sp23-group12/index.html) 
 
 [Fortune Cookies Tarot Card GitHub Repo](https://github.com/cse110-sp23-group12/cse110-sp23-group12/tree/main/source)
 
