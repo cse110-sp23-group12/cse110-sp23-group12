@@ -229,7 +229,6 @@ p {
         font-family: "Titan One", cursive;
         font-size: 13px;
         position: absolute;
-        /* left: 10vh; */
         top: 5%;
         left: 50%;
         transform: translateX(-50%);
@@ -341,13 +340,13 @@ p {
     }
 }
 
-@media screen and (min-aspect-ratio: 16/9) {
+@media screen and (aspect-ratio >= 16/9) {
     .prompt {
         display: none;
     }
 }
 
-@media screen and (min-aspect-ratio: 9/16) and (width <= 468px) {
+@media screen and (aspect-ratio >= 9/16) and (width <= 468px) {
     .prompt {
         display: none;
     }
